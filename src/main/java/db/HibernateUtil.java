@@ -2,7 +2,7 @@ package db;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtilgit {
+public class HibernateUtil {
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
