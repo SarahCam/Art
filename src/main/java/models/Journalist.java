@@ -22,4 +22,9 @@ public class Journalist extends Employee {
     public void setArticles(Set<Article> articles) {
         this.articles = articles;
     }
+
+    public void CreateArticle(String headLine) {
+        Article article = new Article(headLine);
+        this.articles.add(article);
+    }
 }
