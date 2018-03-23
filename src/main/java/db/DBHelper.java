@@ -13,12 +13,12 @@ public class DBHelper {
     private static Transaction transaction;
     private static Session session;
 
-    public static void save(Object object) {
+    public static void saveOrUpdate(Object object) {
 
         session = HibernateUtil.getSessionFactory().openSession();
         try {
             transaction = session.beginTransaction();
-            session.save(object);
+            session.saveOrUpdate(object);
             transaction.commit();
         } catch (HibernateException e) {
             transaction.rollback();
@@ -38,20 +38,6 @@ public class DBHelper {
                 session.delete(result);
             }
         } catch (HibernateException e){
-            transaction.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-    }
-
-    public static void update(Object object){
-        session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            transaction = session.beginTransaction();
-            session.update(object);
-            transaction.commit();
-        } catch (HibernateException e) {
             transaction.rollback();
             e.printStackTrace();
         } finally {
