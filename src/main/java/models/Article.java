@@ -1,4 +1,4 @@
 package models;
 
-public abstract class Article {
+public class Article {
 }
