@@ -18,6 +18,7 @@ public class Article {
     private Calendar creationDate;
     private GregorianCalendar publishedDate;
     private StatusType status;
+    private int readCount;
 
     public Article() {
     }
@@ -32,6 +33,7 @@ public class Article {
         this.creationDate = GregorianCalendar.getInstance();    // Get current date from computer
         this.publishedDate = null;
         this.status = StatusType.DRAFT;                         // Default to DRAFT
+        this.readCount = 0;
     }
 
     public int getId() {
@@ -112,5 +114,13 @@ public class Article {
 
     public void setStatus(StatusType status) {
         this.status = status;
+    }
+
+    public int getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(int readCount) {
+        this.readCount = readCount;
     }
 }
