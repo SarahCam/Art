@@ -1,4 +1,5 @@
 import models.Article;
+import models.Journalist;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,10 +11,12 @@ import static org.junit.Assert.assertEquals;
 public class TestArticle {
 
     private Article article;
+    private Journalist journalist;
 
     @Before
     public void setUp() throws Exception {
-        article = new Article("Dinosaur Rampage");
+        journalist = new Journalist("Suzy", "Smith");
+        article = new Article("Dinosaur Rampage", journalist);
     }
 
     @Test

@@ -29,9 +29,4 @@ public class TestJournalist {
         assertEquals("Smith", journalist.getLastName());
     }
 
-    @Test
-    public void canCreateArticle() {
-        journalist.CreateArticle("Jurassic Escape");
-        assertEquals(1, journalist.getArticles().size());
-    }
 }

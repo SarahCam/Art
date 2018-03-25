@@ -22,13 +22,13 @@ public class Article {
     public Article() {
     }
 
-    public Article(String headLine) {
+    public Article(String headLine, Journalist journalist) {
         this.headLine = headLine;
         this.lede = null;
         this.story = null;
         this.image = null;
         this.category = null;
-        this.journalist = null;                                 // Default to currently logged in Journalist
+        this.journalist = journalist;                           // Default to currently logged in Journalist
         this.creationDate = GregorianCalendar.getInstance();    // Get current date from computer
         this.publishedDate = null;
         this.status = StatusType.DRAFT;                         // Default to DRAFT
