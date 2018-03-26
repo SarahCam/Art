@@ -82,5 +82,24 @@ public class ArticlesController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
+
+        post ("/articles/:id", (req, res) -> {
+            String strId = req.params(":id");
+            Integer intId = Integer.parseInt(strId);
+            Article article = DBHelper.find(intId, Article.class);
+            String headline = req.queryParams("headline");
+            String lede = req.queryParams("lede");
+            String story = req.queryParams("story");
+            String image = req.queryParams("image");
+
+            article.setHeadLine(headline);
+            article.setLede(lede);
+            article.setStory(story);
+            article.setImage(image);
+            DBHelper.saveOrUpdate(article);
+            res.redirect("/articles/dashboard");
+            return null;
+
+        }, new VelocityTemplateEngine());
     }
 }
