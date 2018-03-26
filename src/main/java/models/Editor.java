@@ -1,7 +1,11 @@
 package models;
 
-import java.util.GregorianCalendar;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "editors")
 public class Editor extends Employee {
 
     public Editor() {
