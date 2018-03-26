@@ -71,4 +71,5 @@ public abstract class Employee {
     public void setQuitDate(GregorianCalendar quitDate) {
         this.quitDate = quitDate;
     }
+
 }

@@ -1,5 +1,8 @@
 package db;
 
+import models.Employee;
+import models.Journalist;
+import models.Editor;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -93,5 +96,47 @@ public class DBHelper {
         }
         System.out.println(result);
         return result;
+    }
+
+    public static Employee findEmployee(String firstName){
+        session = HibernateUtil.getSessionFactory().openSession();
+        Employee foundEmployee = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(Employee.class);
+            cr.add(Restrictions.eq("firstName", firstName));
+            foundEmployee = (Employee)cr.uniqueResult();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return foundEmployee;
+    }
+
+    public static String findEmployeeType(String firstName){
+        session = HibernateUtil.getSessionFactory().openSession();
+        Employee foundEmployee = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(Employee.class);
+            cr.add(Restrictions.eq("firstName", firstName));
+            foundEmployee = (Employee)cr.uniqueResult();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        if (foundEmployee instanceof Journalist){
+            return "Journalist";
+        }
+        else if(foundEmployee instanceof Editor) {
+            return "Editor";
+        }
+        return "User";
     }
 }

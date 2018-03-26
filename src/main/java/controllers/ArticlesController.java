@@ -3,6 +3,7 @@ package controllers;
 import db.DBHelper;
 import enums.CategoryType;
 import models.Article;
+import models.Employee;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -36,7 +37,14 @@ public class ArticlesController {
             List<Article> articles = DBHelper.getAll(Article.class);
 
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
+
+            Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
+
+            String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+
             model.put("user", loggedInUser);
+            model.put("loggedInEmployee", loggedInEmployee);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
 
             model.put("template", "templates/articles/index.vtl");
             model.put("articles", articles);
