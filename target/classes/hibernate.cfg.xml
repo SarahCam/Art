@@ -8,14 +8,15 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <!--<property name="hibernate.connection.username"></property>-->
         <!--<property name="hibernate.connection.password"></property>-->
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sgnnnewsdb</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sgnndb</property>
         <!--property name="hibernate.connection.url">jdbc:postgresql://ec2-50-19-88-36.compute-1.amazonaws.com/dej07sr5fndf55?user=vbdtjqvnaqimwa&amp;password=f42b7f4dd4980de0429ed68c184d0b69b8497f59e1c877b20105cd4e8d0bbdf2</property-->
         <property name="connection_pool_size">1</property>
         <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
         <mapping class = "models.Employee"/>
-        <mapping class= "models.Department"/>
-        <mapping class = "models.Manager"/>
-        <mapping class="models.Engineer"/>
+        <mapping class= "models.Editor"/>
+        <mapping class = "models.Journalist"/>
+        <mapping class="models.HRManager"/>
+        <mapping class="models.Article"/>
     </session-factory>
 </hibernate-configuration>
