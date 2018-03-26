@@ -124,8 +124,8 @@ public class Article {
     }
 
     @Column(name = "status")
-    public StatusType getStatus() {
-        return status;
+    public String getStatus() {
+        return status.getStatusType();
     }
 
     public void setStatus(StatusType status) {
