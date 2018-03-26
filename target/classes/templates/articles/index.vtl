@@ -1,8 +1,11 @@
 <div>
+    <p>$user</p>
     #foreach($article in $articles)
     <div class="">
         <p>$article.getHeadLine()</p>
-        <p>$article.getStatus()</p>
+        <p>$article.getJournalist().getFirstName()</p>
+        <p>$article.getCreationDate().getTime()</p>
+        <p>$article.getCategory()</p>
     </div>
     #end
 </div>
