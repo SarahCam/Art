@@ -1,1 +1,8 @@
-s
+#foreach ($article in $articles)
+<div>
+    <ul>
+        <li>$article.getHeadline()</li>
+        <li>$article.getJounalist().getFirstName()</li>
+    </ul>
+</div>
+#end
