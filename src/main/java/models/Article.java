@@ -31,7 +31,7 @@ public class Article {
         this.lede = null;
         this.story = null;
         this.image = null;
-        this.category = null;
+        this.category = CategoryType.NONE;
         this.journalist = journalist;                           // Default to currently logged in Journalist
         this.creationDate = GregorianCalendar.getInstance();    // Get current date from computer
         this.publishedDate = null;

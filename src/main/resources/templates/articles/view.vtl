@@ -1,12 +1,9 @@
 <div>
     <p>$user</p>
-    #foreach($article in $articles)
-    <div class="">
+    <div>
         <p>$article.getHeadLine()</p>
         <p>$article.getJournalist().getFirstName()</p>
         <p>$article.getCreationDate().getTime()</p>
-        <p>$article.getCategory()</p>
-        <a href="/articles/$article.getId()">view</a>
+        <p>$article.getCategoryType()</p>
     </div>
-    #end
 </div>
