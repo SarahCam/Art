@@ -19,6 +19,7 @@ public class MainController {
         staticFileLocation("/public");
 
         ArticlesController articlesController = new ArticlesController();
+        LoginController loginController = new LoginController();
 
 
 //        get("/", (req, res) -> {

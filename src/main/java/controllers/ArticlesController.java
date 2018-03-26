@@ -25,5 +25,19 @@ public class ArticlesController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
+
+        get("/articles/dashboard", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Article> articles = DBHelper.getAll(Article.class);
+
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            model.put("user", loggedInUser);
+
+            model.put("template", "templates/articles/index.vtl");
+            model.put("articles", articles);
+
+            return new ModelAndView(model, "templates/adminLayout.vtl");
+        }, new VelocityTemplateEngine());
     }
 }
