@@ -1,0 +1,26 @@
+<p class="pageHeader">Edit Article</p>
+
+<form action="/articles/$article.getId()" method="post">
+    <label for="headline">Headline:</label>
+    <input class="inputbox" type="text" name="headline" required="true" value="$article.getHeadLine()">
+
+    <label for="lede">Lede:</label>
+    <input class="inputbox" type="text" name="lede" required="true" value="$article.getLede()">
+
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+        #foreach( $categoryType in $categoryTypes )
+        <option value="$.getId()"
+                #if ($department.getId() == $engineer.getDepartment().getId())
+                selected="selected"
+                #end>
+            $department.getTitle()</option>
+        #end
+    </select>
+
+    <label for="salary">Salary(£):</label>
+    <input type="number" name="salary" required="true" class="inputbox" value="$engineer.getSalary()">
+
+    <input type="submit" value="Save" class="button">
+</form>
+<a href="/engineers/$engineer.getId()" class="button center">Cancel</a>

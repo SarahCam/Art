@@ -7,6 +7,10 @@
         <p>$article.getCreationDate().getTime()</p>
         <p>$article.getCategory()</p>
         <a href="/articles/$article.getId()">view</a>
+        <form action="/articles/$article.getId()/delete" method="post">
+            <input type="submit" value="Delete" class="button center">
+        </form>
+
     </div>
     #end
 </div>
