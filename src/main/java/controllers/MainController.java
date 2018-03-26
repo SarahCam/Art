@@ -18,13 +18,16 @@ public class MainController {
 
         staticFileLocation("/public");
 
-        get("/", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
+        ArticlesController articlesController = new ArticlesController();
 
-            model.put("template", "templates/main.vtl");
-            return new ModelAndView(model, "templates/layout.vtl");
 
-        }, new VelocityTemplateEngine());
+//        get("/", (req, res) -> {
+//            Map<String, Object> model = new HashMap<>();
+//
+//            model.put("template", "templates/main.vtl");
+//            return new ModelAndView(model, "templates/layout.vtl");
+//
+//        }, new VelocityTemplateEngine());
 
     }
 }

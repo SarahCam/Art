@@ -4,13 +4,9 @@ import db.DBHelper;
 import models.Article;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
-
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 import static spark.Spark.get;
 
 public class ArticlesController {
@@ -21,11 +17,12 @@ public class ArticlesController {
     private void setupEndpoints(){
 
         get("/", (req, res) -> {
-            List<Article> articles = DBHelper.getAll(Article.class);
             Map<String, Object> model = new HashMap<>();
+            List<Article> articles = DBHelper.getAll(Article.class);
 
-            model.put("articles", articles);
             model.put("template", "templates/main.vtl");
+            model.put("articles", articles);
+
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
     }

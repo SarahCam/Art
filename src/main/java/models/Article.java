@@ -124,13 +124,15 @@ public class Article {
     }
 
     @Column(name = "status")
-    public String getStatus() {
-        return status.getStatusType();
+    public StatusType getStatus() {
+        return status;
     }
 
     public void setStatus(StatusType status) {
         this.status = status;
     }
+
+
 
     @Column(name = "read_count")
     public int getReadCount() {
