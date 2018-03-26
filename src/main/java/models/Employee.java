@@ -1,19 +1,26 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public abstract class Employee {
 
     private int id;
     private String firstName;
     private String lastName;
+    private Calendar hireDate;
+    private GregorianCalendar quitDate;
 
     public Employee() {
     }
 
+
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.hireDate = GregorianCalendar.getInstance();
+        this.quitDate = null;
     }
 
     public int getId() {
@@ -38,5 +45,21 @@ public abstract class Employee {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Calendar getHireDate() {
+        return hireDate;
+    }
+
+    public void setHireDate(Calendar hireDate) {
+        this.hireDate = hireDate;
+    }
+
+    public GregorianCalendar getQuitDate() {
+        return quitDate;
+    }
+
+    public void setQuitDate(GregorianCalendar quitDate) {
+        this.quitDate = quitDate;
     }
 }

@@ -1,5 +1,6 @@
 package models;
 
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,8 +24,4 @@ public class Journalist extends Employee {
         this.articles = articles;
     }
 
-    public void CreateArticle(String headLine) {
-        Article article = new Article(headLine);
-        this.articles.add(article);
-    }
 }

@@ -1,34 +1,39 @@
 package models;
 
+import enums.CategoryType;
+import enums.StatusType;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Article {
 
     private int id;
-    private Calendar creationDate;
-    private GregorianCalendar publishedDate;
     private String headLine;
     private String lede;
     private String story;
-    private String category;                                            // Convert this to an ENUM
-    private String status;                                              // Convert this to an ENUM
+    private String image;
+    private CategoryType category;
     private Journalist journalist;
-    private Editor editor;
+    private Calendar creationDate;
+    private GregorianCalendar publishedDate;
+    private StatusType status;
+    private int readCount;
 
     public Article() {
     }
 
-    public Article(String headLine) {
-        this.creationDate = GregorianCalendar.getInstance();            // Get current date from computer
-        this.publishedDate = null;
+    public Article(String headLine, Journalist journalist) {
         this.headLine = headLine;
         this.lede = null;
         this.story = null;
-        this.status = "draft";                                          // Replace with ENUM
-        this.journalist = null;
-        this.editor = null;
+        this.image = null;
         this.category = null;
+        this.journalist = journalist;                           // Default to currently logged in Journalist
+        this.creationDate = GregorianCalendar.getInstance();    // Get current date from computer
+        this.publishedDate = null;
+        this.status = StatusType.DRAFT;                         // Default to DRAFT
+        this.readCount = 0;
     }
 
     public int getId() {
@@ -37,22 +42,6 @@ public class Article {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Calendar getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Calendar creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public GregorianCalendar getPublishedDate() {
-        return publishedDate;
-    }
-
-    public void setPublishedDate(GregorianCalendar publishedDate) {
-        this.publishedDate = publishedDate;
     }
 
     public String getHeadLine() {
@@ -79,12 +68,20 @@ public class Article {
         this.story = story;
     }
 
-    public String getStatus() {
-        return status;
+    public String getImage() {
+        return image;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public CategoryType getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryType category) {
+        this.category = category;
     }
 
     public Journalist getJournalist() {
@@ -95,19 +92,35 @@ public class Article {
         this.journalist = journalist;
     }
 
-    public Editor getEditor() {
-        return editor;
+    public Calendar getCreationDate() {
+        return creationDate;
     }
 
-    public void setEditor(Editor editor) {
-        this.editor = editor;
+    public void setCreationDate(Calendar creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public String getCategory() {
-        return category;
+    public GregorianCalendar getPublishedDate() {
+        return publishedDate;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setPublishedDate(GregorianCalendar publishedDate) {
+        this.publishedDate = publishedDate;
+    }
+
+    public StatusType getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusType status) {
+        this.status = status;
+    }
+
+    public int getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(int readCount) {
+        this.readCount = readCount;
     }
 }
