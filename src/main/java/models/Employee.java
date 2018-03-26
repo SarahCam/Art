@@ -1,9 +1,11 @@
 package models;
 
-import java.util.ArrayList;
+import javax.persistence.*;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Employee {
 
     private int id;
@@ -23,6 +25,9 @@ public abstract class Employee {
         this.quitDate = null;
     }
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,6 +36,7 @@ public abstract class Employee {
         this.id = id;
     }
 
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -39,6 +45,7 @@ public abstract class Employee {
         this.firstName = firstName;
     }
 
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -47,6 +54,7 @@ public abstract class Employee {
         this.lastName = lastName;
     }
 
+    @Column(name = "hire_date")
     public Calendar getHireDate() {
         return hireDate;
     }
@@ -55,6 +63,7 @@ public abstract class Employee {
         this.hireDate = hireDate;
     }
 
+    @Column(name = "quit_date")
     public GregorianCalendar getQuitDate() {
         return quitDate;
     }
