@@ -3,9 +3,12 @@ package models;
 import enums.CategoryType;
 import enums.StatusType;
 
+import javax.persistence.*;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+@Entity
+@Table(name = "articles")
 public class Article {
 
     private int id;
@@ -36,6 +39,9 @@ public class Article {
         this.readCount = 0;
     }
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -44,6 +50,7 @@ public class Article {
         this.id = id;
     }
 
+    @Column(name = "head_line")
     public String getHeadLine() {
         return headLine;
     }
@@ -52,6 +59,7 @@ public class Article {
         this.headLine = headLine;
     }
 
+    @Column(name = "lede")
     public String getLede() {
         return lede;
     }
@@ -60,6 +68,7 @@ public class Article {
         this.lede = lede;
     }
 
+    @Column(name = "story")
     public String getStory() {
         return story;
     }
@@ -68,6 +77,7 @@ public class Article {
         this.story = story;
     }
 
+    @Column(name = "image")
     public String getImage() {
         return image;
     }
@@ -76,6 +86,7 @@ public class Article {
         this.image = image;
     }
 
+    @Column(name = "category")
     public CategoryType getCategory() {
         return category;
     }
@@ -84,6 +95,8 @@ public class Article {
         this.category = category;
     }
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "journalist_id", nullable = false)
     public Journalist getJournalist() {
         return journalist;
     }
@@ -92,6 +105,7 @@ public class Article {
         this.journalist = journalist;
     }
 
+    @Column(name = "creation_date")
     public Calendar getCreationDate() {
         return creationDate;
     }
@@ -100,6 +114,7 @@ public class Article {
         this.creationDate = creationDate;
     }
 
+    @Column(name = "published_date")
     public GregorianCalendar getPublishedDate() {
         return publishedDate;
     }
@@ -108,6 +123,7 @@ public class Article {
         this.publishedDate = publishedDate;
     }
 
+    @Column(name = "status")
     public StatusType getStatus() {
         return status;
     }
@@ -116,6 +132,7 @@ public class Article {
         this.status = status;
     }
 
+    @Column(name = "read_count")
     public int getReadCount() {
         return readCount;
     }

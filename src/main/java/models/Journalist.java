@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import java.util.HashSet;
@@ -20,6 +21,7 @@ public class Journalist extends Employee {
         this.articles = new HashSet<>();
     }
 
+    @OneToMany(mappedBy = "journalist")
     public Set<Article> getArticles() {
         return articles;
     }
