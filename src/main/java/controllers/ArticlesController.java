@@ -11,10 +11,7 @@ import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
 import javax.jws.WebParam;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -100,6 +97,8 @@ public class ArticlesController {
             int id = Integer.parseInt(req.params(":id"));
             Article article= DBHelper.find(id, Article.class);
             article.setStatus(StatusType.PUBLISH);
+            Calendar todayDate = GregorianCalendar.getInstance();
+            article.setPublishedDate((GregorianCalendar) todayDate);
             DBHelper.saveOrUpdate(article);
             res.redirect("/articles/dashboard");
             return null;
