@@ -2,6 +2,7 @@ package controllers;
 
 import db.Seeds;
 import spark.ModelAndView;
+import spark.Spark;
 import spark.template.velocity.VelocityTemplateEngine;
 
 import java.util.HashMap;
@@ -13,10 +14,10 @@ import static spark.SparkBase.staticFileLocation;
 public class MainController {
 
     public static void main(String[] args) {
+        Spark.staticFileLocation("/public");
 
         Seeds.seedData();
 
-        staticFileLocation("public");
 
         ArticlesController articlesController = new ArticlesController();
         LoginController loginController = new LoginController();
