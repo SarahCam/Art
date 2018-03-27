@@ -13,7 +13,7 @@
     <label for="category">Category:</label>
     <select id="category" name="category">
         #foreach( $categoryType in $categoryTypes )
-        <option value="$categoryType.getCategoryType()" selected="selected">$categoryType.getCategoryType()</option>
+        <option value="$categoryType.getCategory()" selected="selected">$categoryType.getCategory()</option>
         #end
     </select>
 
@@ -23,3 +23,4 @@
     <input type="submit" value="Save" class="button">
 </form>
 <a href="/articles/$article.getId()" class="button center">Cancel</a>
+
