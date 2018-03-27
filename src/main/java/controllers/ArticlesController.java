@@ -2,6 +2,7 @@ package controllers;
 
 import db.DBHelper;
 import enums.CategoryType;
+import enums.StatusType;
 import models.Article;
 import models.Employee;
 import models.Editor;
@@ -42,7 +43,6 @@ public class ArticlesController {
             Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
             String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
 
-//            List<Article> articles = DBHelper.getAll(Article.class);
             List<Article> articles = DBHelper.getAllArticles(loggedInEmployee);
 
             model.put("user", loggedInUser);
@@ -74,6 +74,33 @@ public class ArticlesController {
             int id = Integer.parseInt(req.params(":id"));
             Article articleToDelete = DBHelper.find(id, Article.class);
             DBHelper.delete(articleToDelete);
+            res.redirect("/articles/dashboard");
+            return null;
+        }, new VelocityTemplateEngine());
+
+        post ("/articles/:id/review", (req, res) -> {
+            int id = Integer.parseInt(req.params(":id"));
+            Article article= DBHelper.find(id, Article.class);
+            article.setStatus(StatusType.REVIEW);
+            DBHelper.saveOrUpdate(article);
+            res.redirect("/articles/dashboard");
+            return null;
+        }, new VelocityTemplateEngine());
+
+        post ("/articles/:id/reject", (req, res) -> {
+            int id = Integer.parseInt(req.params(":id"));
+            Article article= DBHelper.find(id, Article.class);
+            article.setStatus(StatusType.DRAFT);
+            DBHelper.saveOrUpdate(article);
+            res.redirect("/articles/dashboard");
+            return null;
+        }, new VelocityTemplateEngine());
+
+        post ("/articles/:id/publish", (req, res) -> {
+            int id = Integer.parseInt(req.params(":id"));
+            Article article= DBHelper.find(id, Article.class);
+            article.setStatus(StatusType.PUBLISH);
+            DBHelper.saveOrUpdate(article);
             res.redirect("/articles/dashboard");
             return null;
         }, new VelocityTemplateEngine());

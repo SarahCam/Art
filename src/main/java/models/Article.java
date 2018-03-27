@@ -132,8 +132,6 @@ public class Article {
         this.status = status;
     }
 
-
-
     @Column(name = "read_count")
     public int getReadCount() {
         return readCount;
@@ -142,4 +140,5 @@ public class Article {
     public void setReadCount(int readCount) {
         this.readCount = readCount;
     }
+
 }

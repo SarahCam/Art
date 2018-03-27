@@ -11,10 +11,35 @@
         <p>$article.getStatus()</p>
         <p>$article.getCategory()</p>
         <a href="/articles/$article.getId()">view</a>
-        #if($loggedInEmployeeType == "Journalist")
+        #if(($loggedInEmployeeType == "Journalist")&&($article.getStatus() == "DRAFT"))
         <a href="/articles/$article.getId()/edit">edit</a>
         <form action="/articles/$article.getId()/delete" method="post">
             <input type="submit" value="Delete" class="button center">
+        </form>
+        <form action="/articles/$article.getId()/review" method="post">
+            <input type="submit" value="Send for Review" class="button center">
+        </form>
+        #end
+        #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "DRAFT"))
+        <form action="/articles/$article.getId()/review" method="post">
+        <input type="submit" value="Take for Review" class="button center">
+        </form>
+        #end
+        #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "REVIEW"))
+        <a href="/articles/$article.getId()/edit">edit</a>
+        <form action="/articles/$article.getId()/delete" method="post">
+            <input type="submit" value="Delete" class="button center">
+        </form>
+        <form action="/articles/$article.getId()/reject" method="post">
+            <input type="submit" value="Reject" class="button center">
+        </form>
+        <form action="/articles/$article.getId()/publish" method="post">
+            <input type="submit" value="Publish" class="button center">
+        </form>
+        #end
+        #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "PUBLISH"))
+        <form action="/articles/$article.getId()/review" method="post">
+            <input type="submit" value="Take for Review" class="button center">
         </form>
         #end
         <p>--------------------------------------------------------------</p>
