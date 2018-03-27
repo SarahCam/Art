@@ -16,7 +16,7 @@ public class MainController {
 
         Seeds.seedData();
 
-        staticFileLocation("/public");
+        staticFileLocation("public");
 
         ArticlesController articlesController = new ArticlesController();
         LoginController loginController = new LoginController();
