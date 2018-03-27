@@ -1,5 +1,7 @@
 package controllers;
 
+import db.DBHelper;
+import models.Employee;
 import org.dom4j.rule.Mode;
 import spark.ModelAndView;
 import spark.Request;
@@ -38,8 +40,12 @@ public class LoginController {
         }, new VelocityTemplateEngine());
 
         get("/dashboard", (req, res) -> {
-            res.redirect("/articles/dashboard");
-            return null;
+            Map<String, Object> model = new HashMap<>();
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+            model.put("user", loggedInUser);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
+            return new ModelAndView(model, "templates/redirectLayout.vtl");
         }, new VelocityTemplateEngine());
     }
 
