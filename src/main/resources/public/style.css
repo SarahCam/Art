@@ -17,10 +17,17 @@ body, html {
     padding: 10px;
     margin: 0 0 20px;
     font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #444;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;}
+
 main {
-    width: 50%;
+    width: 42%;
     height: 100%;
     margin: 0 auto;
     padding: 50px;
@@ -29,18 +36,29 @@ main {
     align-items: center;
     resize: both;
     overflow: auto;
+    flex-direction: row;
 }
 
-main div {
+main .loginblock {
     background: rgba(255,255,255,0.8);
     color: white;
     width: 100%;
     padding: 20px;
     resize: both;
     overflow: auto;
+    border-radius: 5px;
     text-align: left;
+    display: flex;
+    flex-direction: row;
 }
 
+.logo {
+    display: inline-block;
+}
+.input-group {
+    width: 47%;
+    margin-top: 20px;
+}
 /* ---------- BUTTONS ---------- */
 button.go {
     width: 50px;
