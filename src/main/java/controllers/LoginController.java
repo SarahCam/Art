@@ -22,7 +22,7 @@ public class LoginController {
         post("/login",  (req, res) -> {
             String username = req.queryParams("username");
             req.session().attribute("username", username);
-            res.redirect("/articles/dashboard");
+            res.redirect("/dashboard");
             return null;
         }, new VelocityTemplateEngine());
 
@@ -34,6 +34,11 @@ public class LoginController {
         get("/logout", (req, res) -> {
             req.session().removeAttribute("username");
             res.redirect("/login");
+            return null;
+        }, new VelocityTemplateEngine());
+
+        get("/dashboard", (req, res) -> {
+            res.redirect("/articles/dashboard");
             return null;
         }, new VelocityTemplateEngine());
     }
