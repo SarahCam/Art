@@ -1,13 +1,25 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<p class="pageHeader">Create Article</p>
 
-</body>
-</html>
+<form action="/articles/create" method="post">
+    <label for="headline">Headline:</label>
+    <input class="inputbox" type="text" name="headline" required="true" value="Enter headline...">
+
+    <label for="image">Image:</label>
+    <input class="inputbox" type="text" name="image" required="true" value="Add image URL...">
+
+    <label for="lede">Lede:</label>
+    <input class="inputbox" type="text" name="lede" required="true" value="Enter lede...">
+
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+        #foreach($articleCategory in $articleCategories)
+        <option value="$articleCategory" selected="selected">$articleCategory.getCategoryName()</option>
+        #end
+    </select>
+
+    <label for="story">Story:</label>
+    <input type="text" name="story" required="true" class="inputbox" value="Enter story...">
+
+    <input type="submit" value="Save" class="button">
+</form>
+<a href="/articles/dashboard" class="button center">Cancel</a>
