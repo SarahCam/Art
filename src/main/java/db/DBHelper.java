@@ -1,5 +1,6 @@
 package db;
 
+import models.Article;
 import models.Employee;
 import models.Journalist;
 import models.Editor;
@@ -139,4 +140,28 @@ public class DBHelper {
         }
         return "User";
     }
+
+    public static List<Article> getAllArticles(Employee employee){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Article> articles = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(Article.class);
+            if(employee instanceof Editor) {
+                articles = cr.list();                               // Get ALL articles because I am the Editor!
+            }
+            else if (employee instanceof Journalist){
+                cr.add(Restrictions.eq("journalist", employee));    // Only get articles created by this Journalist
+                articles = cr.list();
+            }
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return articles;
+    }
+
 }

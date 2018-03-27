@@ -4,6 +4,8 @@ import db.DBHelper;
 import enums.CategoryType;
 import models.Article;
 import models.Employee;
+import models.Editor;
+import models.Journalist;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -11,6 +13,8 @@ import javax.jws.WebParam;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import static spark.Spark.get;
 import static spark.Spark.post;
 
@@ -34,13 +38,12 @@ public class ArticlesController {
         get("/articles/dashboard", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
-            List<Article> articles = DBHelper.getAll(Article.class);
-
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
-
             Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
-
             String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+
+//            List<Article> articles = DBHelper.getAll(Article.class);
+            List<Article> articles = DBHelper.getAllArticles(loggedInEmployee);
 
             model.put("user", loggedInUser);
             model.put("loggedInEmployee", loggedInEmployee);
