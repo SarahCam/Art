@@ -21,14 +21,5 @@ public class MainController {
         ArticlesController articlesController = new ArticlesController();
         LoginController loginController = new LoginController();
 
-
-//        get("/", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//
-//            model.put("template", "templates/main.vtl");
-//            return new ModelAndView(model, "templates/layout.vtl");
-//
-//        }, new VelocityTemplateEngine());
-
     }
 }
