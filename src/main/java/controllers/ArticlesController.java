@@ -52,6 +52,14 @@ public class ArticlesController {
             return new ModelAndView(model, "templates/adminLayout.vtl");
         }, new VelocityTemplateEngine());
 
+        get("/articles/create", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            model.put("user", loggedInUser);
+            model.put("template", "templates/articles/create.vtl");
+            return new ModelAndView(model, "templates/adminLayout.vtl");
+        }, new VelocityTemplateEngine());
+
         get("/articles/:id", (req, res) -> {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);

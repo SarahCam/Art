@@ -3,6 +3,12 @@
     <p>$loggedInEmployee.getLastName()</p>
     <p>$loggedInEmployeeType</p>
     <p>=================================================================</p>
+    <div>
+        #if($loggedInEmployeeType == "Journalist")
+        <a href="/articles/create">Create New Article</a>
+        #end
+    </div>
+    <p>=================================================================</p>
     #foreach($article in $articles)
     <div class="">
         <p>$article.getHeadLine()</p>
