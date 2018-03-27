@@ -1,9 +1,6 @@
 package db;
 
-import models.Article;
-import models.Employee;
-import models.Journalist;
-import models.Editor;
+import models.*;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -137,6 +134,9 @@ public class DBHelper {
         }
         else if(foundEmployee instanceof Editor) {
             return "Editor";
+        }
+        else if(foundEmployee instanceof HRManager) {
+            return "HRManager";
         }
         return "User";
     }
