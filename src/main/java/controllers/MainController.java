@@ -24,9 +24,6 @@ public class MainController {
         ArticlesController articlesController = new ArticlesController();
         LoginController loginController = new LoginController();
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 544a47e3883729e91dabe883836eab9ee119483e
     }
 }
