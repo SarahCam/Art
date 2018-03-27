@@ -13,7 +13,7 @@
     <label for="category">Category:</label>
     <select id="category" name="category">
         #foreach( $categoryType in $categoryTypes )
-        <option value="$categoryType.getCategory()" selected="selected">$categoryType.getCategory()</option>
+        <option value="$categoryType.getCategoryName()" selected="selected">$categoryType.getCategoryName()</option>
         #end
     </select>
 

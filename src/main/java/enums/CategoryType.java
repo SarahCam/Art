@@ -1,18 +1,18 @@
 package enums;
 
 public enum CategoryType {
-    NONE("none"),
-    NEWS("news"),
-    SPORT("sport"),
-    ENTERTAINMENT("entertainment");
+    NONE("No Category"),
+    NEWS("News"),
+    SPORT("Sport"),
+    ENTERTAINMENT("Entertainment");
 
-    private String categoryType;
+    private String categoryName;
 
-    CategoryType(String categoryType){
-        this.categoryType = categoryType;
+    CategoryType(String categoryName){
+        this.categoryName = categoryName;
     }
 
-    public String getCategoryType(){
-        return categoryType;
+    public String getCategoryName(){
+        return categoryName;
     }
     }
