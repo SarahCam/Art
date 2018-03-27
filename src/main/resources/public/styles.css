@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,700i,900|Open+Sans:400,700,700i,800');
+
+body {
+    background-color: white;
+    font-famil: "Open Sans", san
+}
+
+
+.inputbox {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 0 0 20px;
+    font-size: 16px;
+}
+
+main {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    resize: both;
+    overflow: auto;
+}
+
+main div {
+    background: #0077CC;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    resize: both;
+    overflow: auto;
+    text-align: left;
+    border-radius: 10px;
+}
