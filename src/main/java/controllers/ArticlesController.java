@@ -54,8 +54,10 @@ public class ArticlesController {
 
         get("/articles/create", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            List<CategoryType> articleCategories = DBHelper.getAllArticleCategories();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
             model.put("user", loggedInUser);
+            model.put("articleCategories", articleCategories);
             model.put("template", "templates/articles/create.vtl");
             return new ModelAndView(model, "templates/adminLayout.vtl");
         }, new VelocityTemplateEngine());
