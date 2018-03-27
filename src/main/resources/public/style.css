@@ -21,11 +21,12 @@ body, html {
 
 main {
     width: 50%;
+    height: 100%;
     margin: 0 auto;
     padding: 50px;
     display: flex;
     justify-content: center;
-    align-items: left;
+    align-items: center;
     resize: both;
     overflow: auto;
 }
@@ -60,7 +61,7 @@ textarea {
 
 input,
 textarea {
-  background: none;
+  background: white;
   color: #444;
   font-size: 18px;
   padding: 10px 10px 10px 5px;
