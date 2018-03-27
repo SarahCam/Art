@@ -109,12 +109,12 @@ public class ArticlesController {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
             Article article = DBHelper.find(intId, Article.class);
-            List<CategoryType> categoryTypes = DBHelper.getAll(CategoryType.class);
+            List<CategoryType> articleCategories = DBHelper.getAllArticleCategories();
 
             Map<String, Object> model = new HashMap<>();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
             model.put("user", loggedInUser);
-            model.put("categoryTypes", categoryTypes);
+            model.put("articleCategories", articleCategories);
             model.put("template", "templates/articles/edit.vtl");
             model.put("article", article);
 
@@ -125,15 +125,19 @@ public class ArticlesController {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
             Article article = DBHelper.find(intId, Article.class);
+
             String headline = req.queryParams("headline");
             String lede = req.queryParams("lede");
             String story = req.queryParams("story");
             String image = req.queryParams("image");
+            String strCategory = req.queryParams("category");
+            CategoryType enumCategory = CategoryType.valueOf(strCategory);
 
             article.setHeadLine(headline);
             article.setLede(lede);
             article.setStory(story);
             article.setImage(image);
+            article.setCategory(enumCategory);
             DBHelper.saveOrUpdate(article);
             res.redirect("/articles/dashboard");
             return null;

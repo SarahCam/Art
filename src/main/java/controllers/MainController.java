@@ -1,6 +1,7 @@
 package controllers;
 
 import db.Seeds;
+import enums.CategoryType;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -18,17 +19,10 @@ public class MainController {
 
         staticFileLocation("/public");
 
+
         ArticlesController articlesController = new ArticlesController();
         LoginController loginController = new LoginController();
 
-
-//        get("/", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//
-//            model.put("template", "templates/main.vtl");
-//            return new ModelAndView(model, "templates/layout.vtl");
-//
-//        }, new VelocityTemplateEngine());
 
     }
 }

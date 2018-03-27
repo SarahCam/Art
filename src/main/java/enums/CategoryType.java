@@ -15,4 +15,4 @@ public enum CategoryType {
     public String getCategoryName(){
         return categoryName;
     }
-    }
+}

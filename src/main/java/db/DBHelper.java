@@ -167,10 +167,10 @@ public class DBHelper {
         return articles;
     }
 
-//    public static ArrayList<CategoryType> getAllFoodCategories(){
-//        ArrayList<FoodCategory> foodCategories = new ArrayList<>();
-//        Collections.addAll(foodCategories, FoodCategory.values());
-//        return foodCategories;
-//    }
+    public static ArrayList<CategoryType> getAllArticleCategories(){
+        ArrayList<CategoryType> articleCategories = new ArrayList<>();
+        Collections.addAll(articleCategories, CategoryType.values());
+        return articleCategories;
+    }
 
 }
