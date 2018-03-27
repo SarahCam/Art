@@ -1,5 +1,6 @@
 package db;
 
+import enums.CategoryType;
 import models.*;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -7,6 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DBHelper {
@@ -162,6 +165,12 @@ public class DBHelper {
             session.close();
         }
         return articles;
+    }
+
+    public static ArrayList<CategoryType> getAllArticleCategories(){
+        ArrayList<CategoryType> articleCategories = new ArrayList<>();
+        Collections.addAll(articleCategories, CategoryType.values());
+        return articleCategories;
     }
 
 }

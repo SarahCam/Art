@@ -7,9 +7,11 @@
     <div class="">
         <p>$article.getHeadLine()</p>
         <p>$article.getJournalist().getFirstName()</p>
+        <p>$article.getJournalist().getLastName()</p>
         <p>$article.getCreationDate().getTime()</p>
+        <p>$article.getPublishedDate().getTime()</p>
         <p>$article.getStatus()</p>
-        <p>$article.getCategory()</p>
+        <p>$article.getCategory().getCategoryName()</p>
         <a href="/articles/$article.getId()">view</a>
         #if(($loggedInEmployeeType == "Journalist")&&($article.getStatus() == "DRAFT"))
         <a href="/articles/$article.getId()/edit">edit</a>

@@ -1,6 +1,7 @@
 package controllers;
 
 import db.Seeds;
+import enums.CategoryType;
 import spark.ModelAndView;
 import spark.Spark;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -19,8 +20,10 @@ public class MainController {
         Seeds.seedData();
 
 
+
         ArticlesController articlesController = new ArticlesController();
         LoginController loginController = new LoginController();
+
 
     }
 }
