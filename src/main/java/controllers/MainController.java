@@ -23,6 +23,7 @@ public class MainController {
 
         ArticlesController articlesController = new ArticlesController();
         LoginController loginController = new LoginController();
+        EmployeesController employeesController = new EmployeesController();
 
 
     }
