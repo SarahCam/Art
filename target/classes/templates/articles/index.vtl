@@ -33,9 +33,9 @@
                 </form></li>
                 #end
                 #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "REVIEW"))
-                <li>><a data-balloon="Edit" data-balloon-pos="down" class="btn" href="/articles/$article.getId()/edit"><i class="far fa-edit"></i>&nbsp;</a></li>
-                <li>><form action="/articles/$article.getId()/delete" method="post">
-                    <button data-balloon="Delete" data-balloon-pos="down" type="submit" value="Delete" class="btn center"><i class="fas fa-times"></i>&nbsp;</button>
+                <li><a data-balloon="Edit" data-balloon-pos="down" class="btn" href="/articles/$article.getId()/edit"><i class="far fa-edit"></i>&nbsp;</a></li>
+                <li><form action="/articles/$article.getId()/delete" method="post">
+                    <button data-balloon="Delete" data-balloon-pos="down" type="submit" value="Delete" class="btn center"><i class="fas fa-trash-alt"></i>&nbsp;</button>
                 </form></li>
                 <li><form action="/articles/$article.getId()/reject" method="post">
                     <button data-balloon="Reject" data-balloon-pos="down" type="submit" value="Reject" class="btn"><i class="fas fa-times"></i>&nbsp;</button>
