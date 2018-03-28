@@ -13,6 +13,7 @@ public abstract class Employee {
     private String lastName;
     private Calendar hireDate;
     private GregorianCalendar quitDate;
+    private boolean isEmployed;
 
     public Employee() {
     }
@@ -23,6 +24,7 @@ public abstract class Employee {
         this.lastName = lastName;
         this.hireDate = GregorianCalendar.getInstance();
         this.quitDate = null;
+        this.isEmployed = true;
     }
 
     @Id
@@ -72,4 +74,12 @@ public abstract class Employee {
         this.quitDate = quitDate;
     }
 
+    @Column(name = "is_employed")
+    public boolean isEmployed() {
+        return isEmployed;
+    }
+
+    public void setEmployed(boolean employed) {
+        isEmployed = employed;
+    }
 }
