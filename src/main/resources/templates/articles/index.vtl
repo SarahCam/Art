@@ -2,6 +2,12 @@
     <p>$user</p>
     <p>$loggedInEmployee.getLastName()</p>
     <p>$loggedInEmployeeType</p>
+
+    <div>
+        #if($loggedInEmployeeType == "Journalist")
+        <a href="/articles/create">Create New Article</a>
+        #end
+    </div>
     <section class="cards">
 
 #foreach($article in $articles)

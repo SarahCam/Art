@@ -52,6 +52,37 @@ public class ArticlesController {
             return new ModelAndView(model, "templates/adminLayout.vtl");
         }, new VelocityTemplateEngine());
 
+        get("/articles/create", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<CategoryType> articleCategories = DBHelper.getAllArticleCategories();
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            model.put("user", loggedInUser);
+            model.put("articleCategories", articleCategories);
+            model.put("template", "templates/articles/create.vtl");
+            return new ModelAndView(model, "templates/adminLayout.vtl");
+        }, new VelocityTemplateEngine());
+
+        post ("/articles/create", (req, res) -> {
+            String headline = req.queryParams("headline");
+            String lede = req.queryParams("lede");
+            String story = req.queryParams("story");
+            String image = req.queryParams("image");
+            String strCategory = req.queryParams("category");
+            CategoryType enumCategory = CategoryType.valueOf(strCategory);
+
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
+            Article article = new Article(headline, (Journalist) loggedInEmployee);
+            article.setLede(lede);
+            article.setStory(story);
+            article.setImage(image);
+            article.setCategory(enumCategory);
+            DBHelper.saveOrUpdate(article);
+            res.redirect("/articles/dashboard");
+            return null;
+
+        }, new VelocityTemplateEngine());
+
         get("/articles/:id", (req, res) -> {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
