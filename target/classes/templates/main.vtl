@@ -1,17 +1,21 @@
 <p class="pageHeader">Home Page</p>
-<div>
+<section class="cards">
     #foreach($article in $articles)
-        #if($article.getStatus() == "PUBLISH")
-        <div class="">
-            <p>$article.getHeadLine()</p>
-            <p>$article.getImage()</p>
-            <p>$article.getJournalist().getFirstName()</p>
-            <p>$article.getJournalist().getLastName()</p>
-            <p>$article.getCreationDate().getTime()</p>
-            <p>$article.getPublishedDate().getTime()</p>
-            <p>$article.getStatus()</p>
-            <p>$article.getCategory().getCategoryName()</p>
-        </div>
-        #end
+    #if($article.getStatus() == "PUBLISH")
+    <article class="card">
+        <div class="wrapper" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
+
+            <div class="data ${article.getCategory()}" > <!-- ADD STATUS $article.getStatus()-->
+                <div class="card-content">
+                    <h3>$article.getHeadLine()</h3>
+                    <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
+                    <p>$article.getCreationDate().getTime()</p>
+                    <p>$article.getPublishedDate().getTime()</p>
+                    <p>$article.getStatus()</p>
+                    <p>$article.getCategory().getCategoryName()</p>
+                </div>
+            </div>
+    </article>
     #end
-</div>
+    #end
+</section>

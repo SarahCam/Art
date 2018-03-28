@@ -50,14 +50,14 @@ public class Seeds {
         Article article5 = new Article("Glasgow Pub Brawl", journalist2);
         article5.setLede("Three dead and five critically injured when fight breaks out in the Dog and Hound");
         article5.setStory("Blah blah blah");
-        article5.setImage("image.jpg");
+        article5.setImage("pub-brawl.jpg");
         article5.setPublishedDate((GregorianCalendar) currentTime);
         article5.setStatus(StatusType.PUBLISH);
         DBHelper.saveOrUpdate(article5);
         Article article6 = new Article("Russian Spies Evicted", journalist3);
         article6.setLede("Nerve gas outbreak sends politicians into red alert");
         article6.setStory("Blah blah blah");
-        article6.setImage("image.jpg");
+        article6.setImage("russian-spy.jpg");
         article6.setPublishedDate((GregorianCalendar) currentTime);
         article6.setStatus(StatusType.PUBLISH);
         DBHelper.saveOrUpdate(article6);
