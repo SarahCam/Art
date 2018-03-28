@@ -9,15 +9,15 @@
         #end
     </div>
     <section class="cards">
-
-#foreach($article in $articles)
-<article class="card">
-    <div class="wrapper" style='background: imgs/$article.getImage().jpg' center/cover no-repeat;">
+    #foreach($article in $articles)
+    <article class="card">
+        <div class="wrapper" style="background:'/imgs/$article.getImage().jpg' center/cover no-repeat;">
         <div class="header">
             <ul class="menu-content noblock">
-                <span class="field-tip"><li class="view">
-                    <a class="btn" href="/articles/$article.getId()"><i class="fas fa-eye"></i>&nbsp;</a> </li><span class="tip-content">View</span>
-                </span>
+                <li class="view">
+                    <a data-balloon="View" data-balloon-pos="down" class="btn" href="/articles/$article.getId()"><i class="fas fa-eye"></i>&nbsp;</a>
+                </li>
+
                 #if(($loggedInEmployeeType == "Journalist")&&($article.getStatus() == "DRAFT"))
                 <li><a href="/articles/$article.getId()/edit">edit</a></li>
                 <li><form action="/articles/$article.getId()/delete" method="post">
@@ -29,7 +29,7 @@
                 #end
                 #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "DRAFT"))
                 <li><form action="/articles/$article.getId()/review" method="post">
-                    <button type="submit" value="Take for Review" class="btn center"><i class="far fa-check-circle"></i>Take for review</button>
+                    <button data-balloon="Take for review" data-balloon-pos="down" type="submit" value="Take for Review" class="btn center"><i class="far fa-check-circle"></i>&nbsp;</button>
                 </form></li>
                 #end
                 #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "REVIEW"))
@@ -46,8 +46,8 @@
                 #end
                 #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "PUBLISH"))
                 <li><form action="/articles/$article.getId()/review" method="post">
-                    <input type="submit" value="Take for Review" class="button center">
-            </form></li>
+                    <button data-balloon="Take for review" data-balloon-pos="down" type="submit" value="Take for Review" class="btn center"><i class="far fa-check-circle"></i>&nbsp;</button>
+                </form></li>
                 #end
             </ul>
         </div>
@@ -60,6 +60,6 @@
                 <p>$article.getStatus()</p>
                 <p>$article.getCategory().getCategoryName()</p>
             </div>
-</article>
-#end
+    </article>
+    #end
     </section>
