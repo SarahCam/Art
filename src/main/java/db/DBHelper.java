@@ -79,6 +79,24 @@ public class DBHelper {
         return results;
     }
 
+    public static <T> List<T> getAllOrderByProperty(Class classType, String classProperty){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<T> results = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(classType);
+            cr.addOrder(Order.desc(classProperty));                // Order by the provided class property
+            results = cr.list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
     public static <T> T find(int id, Class classType){
         session = HibernateUtil.getSessionFactory().openSession();
         T result = null;
