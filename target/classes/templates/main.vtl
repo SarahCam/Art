@@ -2,8 +2,9 @@
 <section class="cards">
     #foreach($article in $articles)
     #if($article.getStatus() == "PUBLISH")
-    <a href="/articles/view/$article.getId()">
         <article class="card">
+            <a href="/articles/view/$article.getId()">
+
             <div class="wrapper" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
 
                 <div class="data ${article.getCategory()}" > <!-- ADD STATUS $article.getStatus()-->
@@ -15,8 +16,9 @@
                     </div>
                 </div>
             </div>
+            </a>
+
         </article>
-    </a>
     #end
     #end
-</section>ac
+</section>

@@ -68,7 +68,7 @@ public class Article {
         this.lede = lede;
     }
 
-    @Column(name = "story")
+    @Column(name = "story", length = 2048)
     public String getStory() {
         return story;
     }
