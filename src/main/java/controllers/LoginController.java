@@ -52,7 +52,8 @@ public class LoginController {
 
     public static String getLoggedInUserName(Request req, Response res){
         String username = req.session().attribute("username");
-        if (username == null || username.isEmpty()){
+        Employee loggedInEmployee = DBHelper.findEmployee(username);
+        if (username == null || username.isEmpty() || loggedInEmployee.isEmployed() == false ){
             res.redirect("/login");
         }
         return username;
