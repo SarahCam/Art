@@ -1,17 +1,30 @@
-<div>
-    <p>$user</p>
-    <div>
-        <p>$article.getStatus()</p>
-        <p>$article.getCategory().getCategoryName()</p>
-        <p>$article.getHeadLine()</p>
-        <p>$article.getJournalist().getFirstName()</p>
-        <p>$article.getJournalist().getLastName()</p>
-        <p>$article.getImage()</p>
+<section class="wrapper">
+    <article class="container">
+        <div class="shift">
+        <h1>$article.getHeadLine() | <span class="headline-category">$article.getCategory().getCategoryName()</span></h1>
+            <p><span>$article.getJournalist().getFirstName()</span> <span>$article.getJournalist().getLastName()</span></p>
+            <p>Published: $article.getPublishedDate().getTime()</p>
+
+
+
+            <div ><img class="full-image" src="/imgs/${article.getImage()}"/></div>
+
         <p>$article.getLede()</p>
         <p>$article.getStory()</p>
-        <p>$article.getCreationDate().getTime()</p>
-        <p>$article.getPublishedDate().getTime()</p>
-        <p>$article.getReadCount()</p>
-    </div>
-</div>
+        </div>
+        <div class="shift">
+            <ul>
+            #foreach($article in $articles)
+            #if($article.getStatus() == "PUBLISH")
+                <li>
+                    <h3>$article.getHeadLine()</h3>
+                    <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
+                    <p>$article.getLede()</p>
+                </li>
+                #end
+                #end
+            </ul>
+        </div>
+    </article>
+</section>
 

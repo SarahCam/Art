@@ -48,6 +48,9 @@ public class Seeds {
         article4.setCategory(CategoryType.SPORT);
         article4.setPublishedDate((GregorianCalendar) currentTime);
         article4.setStatus(StatusType.PUBLISH);
+        article4.setStory("<p>Spicy jalapeno filet mignon rump buffalo deserunt qui fatback strip steak pork loin velit boudin. Rump velit boudin commodo swine leberkas. Veniam irure prosciutto brisket. Shankle lorem turducken, est hamburger shank mollit pariatur sint nisi. Pig qui nostrud cupidatat sirloin beef ut picanha sed corned beef anim. Dolore ham hock shank, landjaeger cupidatat tongue drumstick prosciutto. Mollit occaecat et, flank anim swine ground round ut non.</p" +
+                "<p>Pancetta aute nulla, deserunt shank consequat drumstick nostrud. Proident biltong exercitation cillum tri-tip pork belly hamburger pastrami flank in t-bone. Pancetta filet mignon aliqua, voluptate flank pariatur sed short loin alcatra. Magna do t-bone ad short loin kielbasa. Ham velit andouille nostrud labore culpa irure.</p>" +
+                "<p>Tongue chuck sausage, eu tenderloin nisi jerky. Strip steak velit labore sunt pork chop ham hock short ribs tempor. Pork loin shoulder sed nostrud magna meatball. Turkey pork belly tenderloin, consequat jerky chicken tempor meatball. Tenderloin pork chop proident dolor. Rump bresaola doner, bacon ad strip steak alcatra chuck qui adipisicing kielbasa tempor drumstick tail cow. Culpa frankfurter est meatloaf.");
         DBHelper.saveOrUpdate(article4);
         Article article5 = new Article("Glasgow Pub Brawl", journalist2);
         article5.setLede("Three dead and five critically injured when fight breaks out in the Dog and Hound");

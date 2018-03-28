@@ -73,9 +73,32 @@ header {
     margin: 10px 0 0 20px;
 }
 
+span.headline-category {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 70%;
+    color: red;
+}
 
+section.wrapper {
+    width: 100%;
+}
+article.container {
+    width: 960px;
+    margin: auto auto;
+}
 .input-group {
     width: 35%;
+}
+article.p {
+    font-size: 80%;
+    line-height: 1.25;
+
+}
+.full-image {width: 100%;}
+
+.shift {
+    display; inline-block;
 }
 /* ---------- BUTTONS ---------- */
 button.go {
