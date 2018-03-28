@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.*;
@@ -148,6 +149,7 @@ public class DBHelper {
         try {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(Article.class);
+            cr.addOrder(Order.desc("creationDate"));                // Order by the article creationDate
             if(employee instanceof Editor) {
                 articles = cr.list();                               // Get ALL articles because I am the Editor!
             }
