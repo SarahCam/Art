@@ -41,7 +41,7 @@ public class Seeds {
         DBHelper.saveOrUpdate(article2);
         Article article3 = new Article("Motorcycle Mayhem", journalist3);
         DBHelper.saveOrUpdate(article3);
-        Article article4 = new Article("Five-Aside Chaos", journalist1);
+        Article article4 = new Article("Five-a-side Chaos", journalist1);
         article4.setLede("Trouble in the city when local football team kick ball into passers-by");
         article4.setStory("<p>Spicy jalapeno filet mignon rump buffalo deserunt qui fatback strip steak pork loin velit boudin. Rump velit boudin commodo swine leberkas. Veniam irure prosciutto brisket. Shankle lorem turducken, est hamburger shank mollit pariatur sint nisi. Pig qui nostrud cupidatat sirloin beef ut picanha sed corned beef anim. Dolore ham hock shank, landjaeger cupidatat tongue drumstick prosciutto. Mollit occaecat et, flank anim swine ground round ut non.</p>" +
                 "                <p>Pancetta aute nulla, deserunt shank consequat drumstick nostrud. Proident biltong exercitation cillum tri-tip pork belly hamburger pastrami flank in t-bone. Pancetta filet mignon aliqua, voluptate flank pariatur sed short loin alcatra. Magna do t-bone ad short loin kielbasa. Ham velit andouille nostrud labore culpa irure.</p>" +

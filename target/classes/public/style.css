@@ -6,6 +6,16 @@ body {
     background-color: white;
     font-family: "Open Sans", sans-serif;
     color: #444;
+    }
+
+h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif;}
+
+.main-wrapper {
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left:  10px;
 }
 
 body, html {
@@ -145,6 +155,14 @@ body.bg_homepage {
   background-color: #E7EBEA;
 }
 
+body.bg_main {
+  background-image: url('../imgs/bg1.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #E7EBEA;
+}
 
 /* ---------- CARD ---------- */
 .card {
@@ -203,9 +221,6 @@ body.bg_homepage {
   color: #fff;
 }
 
-.card .wrapper:hover .data {
-  transform: translateY(0);
-}
 
 .card {
   background-color: #fff;
@@ -213,7 +228,7 @@ body.bg_homepage {
   overflow: hidden;
   transition: 0.3s;
   margin: 30px 15px;
-  flex: 0 1 21%;
+  flex: 0 1 30%;
   box-shadow: 0 9px 28px rgba(0, 0, 0, 0.3), 0 5px 2px rgba(0, 0, 0, 0.2);
 }
 .card:hover {
@@ -240,7 +255,6 @@ body.bg_homepage {
   font-size: 10px;
   font-weight: 700;
   font-family: 'Open Sans';
-/*  transform: translate(-50%, 0);*/
 }
 .card .wrapper {
   background-color: #fff;
@@ -257,7 +271,6 @@ body.bg_homepage {
   position: absolute;
   bottom: 0;
   width: 100%;
-/*  transform: translateY(calc(196px + 1em));*/
   transition: transform 0.3s;
 }
 .card .data .content {
@@ -275,12 +288,8 @@ body.bg_homepage {
   height: 70px;
   margin: 0;
 }
-.card input[type='checkbox'] {
-  display: none;
-}
-.card input[type='checkbox']:checked + .menu-content {
-  transform: translateY(-60px);
-}
+
+
 
 
 
@@ -322,6 +331,10 @@ input.take-review {
     border-top: 8px solid #0094fe;
 }
 
+h1.pageheader {
+    padding-left: 15px;
+    margin-top: 50px;
+}
 
         @media only screen
         and (min-device-width : 375px)
