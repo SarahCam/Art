@@ -59,5 +59,27 @@ public class EmployeesController {
 
         }, new VelocityTemplateEngine());
 
+
+        get ("/employees/create/journalist", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            model.put("template", "templates/employees/create.vtl");
+
+            return new ModelAndView(model, "templates/adminLayout.vtl");
+        }, new VelocityTemplateEngine());
+
+
+        post ("/employees/create/journalist", (req, res) -> {
+            String firstName = req.queryParams("firstname");
+            String lastName = req.queryParams("lastname");
+
+//          Employee newEmployee = DBHelper.createEmployee(firstName, lastName, role);
+
+            Journalist newEmployee = new Journalist(firstName, lastName);
+            DBHelper.saveOrUpdate(newEmployee);
+            res.redirect("/employees/dashboard");
+            return null;
+        }, new VelocityTemplateEngine());
+
     }
 }

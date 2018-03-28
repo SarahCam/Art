@@ -25,7 +25,7 @@ public class ArticlesController {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            List<Article> articles = DBHelper.getAll(Article.class);
+            List<Article> articles = DBHelper.getAllOrderByProperty(Article.class, "publishedDate");
 
             model.put("template", "templates/main.vtl");
             model.put("articles", articles);

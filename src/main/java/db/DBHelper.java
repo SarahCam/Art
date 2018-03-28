@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.*;
@@ -67,6 +68,24 @@ public class DBHelper {
         try {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(classType);
+            results = cr.list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
+    public static <T> List<T> getAllOrderByProperty(Class classType, String classProperty){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<T> results = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(classType);
+            cr.addOrder(Order.desc(classProperty));                // Order by the provided class property
             results = cr.list();
             transaction.commit();
         } catch (HibernateException e) {
@@ -148,6 +167,7 @@ public class DBHelper {
         try {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(Article.class);
+            cr.addOrder(Order.desc("creationDate"));                // Order by the article creationDate
             if(employee instanceof Editor) {
                 articles = cr.list();                               // Get ALL articles because I am the Editor!
             }
@@ -175,6 +195,19 @@ public class DBHelper {
         if(!employee.isEmployed()){
             employee.setQuitDate((GregorianCalendar) Calendar.getInstance());
         }
+    }
+
+    public static Employee createEmployee(String firstName, String lastName, String role){
+        if(role == "Journalist"){
+            return new Journalist(firstName, lastName);
+        }
+        else if(role == "Editor"){
+            return new Editor(firstName, lastName);
+        }
+        else if(role == "HR Manager"){
+            return new HRManager(firstName, lastName);
+        }
+        return null;
     }
 
 }
