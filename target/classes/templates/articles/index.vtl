@@ -11,7 +11,7 @@
     <section class="cards">
     #foreach($article in $articles)
     <article class="card">
-        <div class="wrapper" style="background:'/imgs/$article.getImage().jpg' center/cover no-repeat;">
+        <div class="wrapper" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
         <div class="header">
             <ul class="menu-content noblock">
                 <li class="view">
@@ -21,7 +21,7 @@
                 #if(($loggedInEmployeeType == "Journalist")&&($article.getStatus() == "DRAFT"))
                 <li><a data-balloon="Edit" data-balloon-pos="down" class="btn" href="/articles/$article.getId()/edit"><i class="far fa-edit"></i>&nbsp;</a></li>
                 <li><form action="/articles/$article.getId()/delete" method="post">
-                    <button data-balloon="Delete" data-balloon-pos="down" type="submit" value="Delete" class="btn center"><i class="fas fa-trash-alt"></i>&nbsp;</button>
+                    <button data-balloon="Delete" data-balloon-pos="down" type="submit" value="Delete" class="btn center"><i class="far fa-trash-alt"></i>&nbsp;</button>
                 </form></li>
                 <li><form action="/articles/$article.getId()/review" method="post">
                     <button data-balloon="Send for review" data-balloon-pos="down" type="submit" value="Send for Review" class="btn center"><i class="fab fa-telegram-plane"></i>&nbsp;</button>

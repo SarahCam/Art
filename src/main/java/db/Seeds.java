@@ -34,6 +34,7 @@ public class Seeds {
         DBHelper.saveOrUpdate(hrManager1);
 
         Article article1 = new Article("Jurassic Escape", journalist1);
+        article1.setImage("jurassic.jpg");
         DBHelper.saveOrUpdate(article1);
         Article article2 = new Article("BumTree Scandal", journalist2);
         DBHelper.saveOrUpdate(article2);
@@ -42,7 +43,7 @@ public class Seeds {
         Article article4 = new Article("Five-Aside Chaos", journalist1);
         article4.setLede("Trouble in the city when local football team kick ball into passers-by");
         article4.setStory("Blah blah blah");
-        article4.setImage("image.jpg");
+        article4.setImage("fives.jpg");
         article4.setPublishedDate((GregorianCalendar) currentTime);
         article4.setStatus(StatusType.PUBLISH);
         DBHelper.saveOrUpdate(article4);
