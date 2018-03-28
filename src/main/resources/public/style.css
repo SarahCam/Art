@@ -97,9 +97,7 @@ article.p {
 }
 .full-image {width: 100%;}
 
-.shift {
-    display; inline-block;
-}
+.shift { display; inline-block; }
 /* ---------- BUTTONS ---------- */
 button.go {
     width: 50px;
@@ -297,8 +295,16 @@ input.take-review {
 .btn:first-child{*margin-left:0;}
 .btn:first-child{*margin-left:0;}
 
-.draft {
-    border-top: 8px solid red;
+.DRAFT {
+    border-top: 8px solid blue;
+}
+
+.REVIEW {
+    border-top: 8px solid orange;
+}
+
+.PUBLISH {
+    border-top: 8px solid #86AE51;
 }
 
 .NONE {
