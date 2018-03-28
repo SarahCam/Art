@@ -195,6 +195,9 @@ public class DBHelper {
         if(!employee.isEmployed()){
             employee.setQuitDate((GregorianCalendar) Calendar.getInstance());
         }
+        else {
+            employee.setQuitDate(null);
+        }
     }
 
     public static Employee createEmployee(String firstName, String lastName, String role){
