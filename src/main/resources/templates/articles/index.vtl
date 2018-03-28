@@ -41,7 +41,7 @@
                     <button data-balloon="Reject" data-balloon-pos="down" type="submit" value="Reject" class="btn"><i class="fas fa-times"></i>&nbsp;</button>
                 </form></li>
                 <li><form action="/articles/$article.getId()/publish" method="post">
-                    < type="submit" value="Publish" class="button center">
+                    <button data-balloon="Publish" data-balloon-pos="down" type="submit" value="Publish" class="btn"><i class="fas fa-check"></i>&nbsp;</button>
                 </form></li>
                 #end
                 #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "PUBLISH"))
