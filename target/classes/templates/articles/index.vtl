@@ -19,12 +19,12 @@
                 </li>
 
                 #if(($loggedInEmployeeType == "Journalist")&&($article.getStatus() == "DRAFT"))
-                <li><a href="/articles/$article.getId()/edit">edit</a></li>
+                <li><a data-balloon="Edit" data-balloon-pos="down" class="btn" href="/articles/$article.getId()/edit"><i class="far fa-edit"></i>&nbsp;</a></li>
                 <li><form action="/articles/$article.getId()/delete" method="post">
-                    <button type="submit" value="Delete" class="btn center">
+                    <button data-balloon="Delete" data-balloon-pos="down" type="submit" value="Delete" class="btn center"><i class="fas fa-trash-alt"></i>&nbsp;</button>
                 </form></li>
                 <li><form action="/articles/$article.getId()/review" method="post">
-                    <input type="submit" value="Send for Review" class="button center">
+                    <button data-balloon="Send for review" data-balloon-pos="down" type="submit" value="Send for Review" class="btn center"><i class="fab fa-telegram-plane"></i>&nbsp;</button>
                 </form></li>
                 #end
                 #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "DRAFT"))
@@ -33,12 +33,12 @@
                 </form></li>
                 #end
                 #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "REVIEW"))
-                <li>><a href="/articles/$article.getId()/edit">edit</a></li>
+                <li>><a data-balloon="Edit" data-balloon-pos="down" class="btn" href="/articles/$article.getId()/edit"><i class="far fa-edit"></i>&nbsp;</a></li>
                 <li>><form action="/articles/$article.getId()/delete" method="post">
-                    <input type="submit" value="Delete" class="button center">
+                    <button data-balloon="Delete" data-balloon-pos="down" type="submit" value="Delete" class="btn center"><i class="fas fa-times"></i>&nbsp;</button>
                 </form></li>
                 <li><form action="/articles/$article.getId()/reject" method="post">
-                    <input type="submit" value="Reject" class="button center">
+                    <button data-balloon="Edit" data-balloon-pos="down" type="submit" value="Reject" class="btn"><i class="fas fa-times"></i>&nbsp;</button>
                 </form></li>
                 <li><form action="/articles/$article.getId()/publish" method="post">
                     <input type="submit" value="Publish" class="button center">
