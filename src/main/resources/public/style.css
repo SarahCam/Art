@@ -356,3 +356,61 @@ input.take-review {
           transform-origin: right bottom;
           transform: skewY(-3deg);
         } */
+
+
+        /* ---------- INPUT BOXES ---------- */
+/* Form input files */
+.group {
+  position: relative;
+  margin: 45px 0;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  background: none;
+  color: #444;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 320px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+input:focus ~ label, input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -14px;
+  font-size: 12px;
+  color: #0094fe;
+}
+input:focus ~ .bar:before,
+textarea:focus ~ .bar:before {
+  width: 320px;
+}
+
+label {
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+
+label.alt {
+  top: -21px;
+  font-size: 12px;
+  color: #0094fe;
+}

@@ -2,13 +2,16 @@
 
 <form action="/articles/$article.getId()" method="post">
     <label for="headline">Headline:</label>
-    <input class="inputbox" type="text" name="headline" required="true" value="$article.getHeadLine()">
+    <input class="inputbox" type="text" name="headline" required="true" value="$article.getHeadLine()"/>
 
     <label for="image">Image:</label>
-    <input class="inputbox" type="text" name="image" required="true" value="$article.getImage()">
+    <input class="inputbox" type="text" name="image" required="true" value="$article.getImage()"/>
 
-    <label for="lede">Lede:</label>
-    <input class="inputbox" type="text" name="lede" required="true" value="$article.getLede()">
+    <div class="group">
+        <textarea type="text" name="lede" id="lede" value="$article.getLede()" required="required"></textarea><span class="highlight"></span><span class="bar"></span>
+        <label>Lede</label>
+    </div>
+
 
     <label for="category">Category:</label>
     <select id="category" name="category">
@@ -17,12 +20,14 @@
         #end
     </select>
 
-    <label for="story">Story:</label>
-    <input type="text" name="story" required="true" class="inputbox" value="$article.getStory()">
+    <div class="group">
+        <textarea type="text" name="story" id="story" required="required" value="$article.getStory()"></textarea><span class="highlight"></span><span class="bar"></span>
+        <label>Story</label>
+    </div>
 
-    <input type="submit" value="Save" class="button">
+    <button type="submit" value="Save" class="btn">
 </form>
-<a href="/articles/$article.getId()" class="button center">Cancel</a>
+<a class="btn" href="/articles/$article.getId()">Cancel</a>
 
 
 
