@@ -2,49 +2,58 @@
     <p>$user</p>
     <p>$loggedInEmployee.getLastName()</p>
     <p>$loggedInEmployeeType</p>
-    <p>=================================================================</p>
-    #foreach($article in $articles)
-    <div class="">
-        <p>$article.getHeadLine()</p>
-        <p>$article.getJournalist().getFirstName()</p>
-        <p>$article.getJournalist().getLastName()</p>
-        <p>$article.getCreationDate().getTime()</p>
-        <p>$article.getPublishedDate().getTime()</p>
-        <p>$article.getStatus()</p>
-        <p>$article.getCategory().getCategoryName()</p>
-        <a href="/articles/$article.getId()">view</a>
-        #if(($loggedInEmployeeType == "Journalist")&&($article.getStatus() == "DRAFT"))
-        <a href="/articles/$article.getId()/edit">edit</a>
-        <form action="/articles/$article.getId()/delete" method="post">
-            <input type="submit" value="Delete" class="button center">
-        </form>
-        <form action="/articles/$article.getId()/review" method="post">
-            <input type="submit" value="Send for Review" class="button center">
-        </form>
-        #end
-        #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "DRAFT"))
-        <form action="/articles/$article.getId()/review" method="post">
-        <input type="submit" value="Take for Review" class="button center">
-        </form>
-        #end
-        #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "REVIEW"))
-        <a href="/articles/$article.getId()/edit">edit</a>
-        <form action="/articles/$article.getId()/delete" method="post">
-            <input type="submit" value="Delete" class="button center">
-        </form>
-        <form action="/articles/$article.getId()/reject" method="post">
-            <input type="submit" value="Reject" class="button center">
-        </form>
-        <form action="/articles/$article.getId()/publish" method="post">
-            <input type="submit" value="Publish" class="button center">
-        </form>
-        #end
-        #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "PUBLISH"))
-        <form action="/articles/$article.getId()/review" method="post">
-            <input type="submit" value="Take for Review" class="button center">
-        </form>
-        #end
-        <p>--------------------------------------------------------------</p>
-    </div>
-    #end
-</div>
+    <section class="cards">
+
+#foreach($article in $articles)
+<article class="card">
+    <div class="wrapper" style='background: imgs/$article.getImage().jpg' center/cover no-repeat;">
+        <div class="header">
+            <ul class="menu-content noblock">
+                <span class="field-tip"><li class="view">
+                    <a class="btn" href="/articles/$article.getId()"><i class="fas fa-eye"></i>&nbsp;</a> </li><span class="tip-content">View</span>
+                </span>
+                #if(($loggedInEmployeeType == "Journalist")&&($article.getStatus() == "DRAFT"))
+                <li><a href="/articles/$article.getId()/edit">edit</a></li>
+                <li><form action="/articles/$article.getId()/delete" method="post">
+                    <button type="submit" value="Delete" class="btn center">
+                </form></li>
+                <li><form action="/articles/$article.getId()/review" method="post">
+                    <input type="submit" value="Send for Review" class="button center">
+                </form></li>
+                #end
+                #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "DRAFT"))
+                <li><form action="/articles/$article.getId()/review" method="post">
+                    <button type="submit" value="Take for Review" class="btn center"><i class="far fa-check-circle"></i>Take for review</button>
+                </form></li>
+                #end
+                #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "REVIEW"))
+                <li>><a href="/articles/$article.getId()/edit">edit</a></li>
+                <li>><form action="/articles/$article.getId()/delete" method="post">
+                    <input type="submit" value="Delete" class="button center">
+                </form></li>
+                <li><form action="/articles/$article.getId()/reject" method="post">
+                    <input type="submit" value="Reject" class="button center">
+                </form></li>
+                <li><form action="/articles/$article.getId()/publish" method="post">
+                    <input type="submit" value="Publish" class="button center">
+                </form></li>
+                #end
+                #if(($loggedInEmployeeType == "Editor")&&($article.getStatus() == "PUBLISH"))
+                <li><form action="/articles/$article.getId()/review" method="post">
+                    <input type="submit" value="Take for Review" class="button center">
+            </form></li>
+                #end
+            </ul>
+        </div>
+        <div class="data draft" > <!-- ADD STATUS $article.getStatus()-->
+            <div class="card-content">
+                <h3>$article.getHeadLine()</h3>
+                <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
+                <p>$article.getCreationDate().getTime()</p>
+                <p>$article.getPublishedDate().getTime()</p>
+                <p>$article.getStatus()</p>
+                <p>$article.getCategory().getCategoryName()</p>
+            </div>
+</article>
+#end
+    </section>
