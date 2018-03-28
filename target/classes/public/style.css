@@ -6,6 +6,7 @@ body {
     background-color: white;
     font-family: "Open Sans", sans-serif;
     color: #444;
+    margin-bottom: 100px;
     }
 
 h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif;}
@@ -156,7 +157,7 @@ body.bg_homepage {
 }
 
 body.bg_main {
-  background-image: url('../imgs/bg1.jpg');
+  background-image: url('../imgs/bg3.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
