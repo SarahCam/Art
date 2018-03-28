@@ -12,6 +12,7 @@
     #foreach($article in $articles)
     <div class="">
         <p>$article.getHeadLine()</p>
+        <p>$article.getImage()</p>
         <p>$article.getJournalist().getFirstName()</p>
         <p>$article.getJournalist().getLastName()</p>
         <p>$article.getCreationDate().getTime()</p>
