@@ -52,7 +52,7 @@ public class EmployeesController {
             thisEmployee.setFirstName(firstName);
             thisEmployee.setLastName(lastName);
             thisEmployee.setEmployed(boolIsEmployed);
-
+            DBHelper.changeEmploymentStatus(thisEmployee);   // Add quitDate, if the isEmployed is now false
             DBHelper.saveOrUpdate(thisEmployee);
             res.redirect("/employees/dashboard");
             return null;

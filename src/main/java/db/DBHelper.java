@@ -8,9 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class DBHelper {
 
@@ -171,6 +169,12 @@ public class DBHelper {
         ArrayList<CategoryType> articleCategories = new ArrayList<>();
         Collections.addAll(articleCategories, CategoryType.values());
         return articleCategories;
+    }
+
+    public static void changeEmploymentStatus(Employee employee){
+        if(!employee.isEmployed()){
+            employee.setQuitDate((GregorianCalendar) Calendar.getInstance());
+        }
     }
 
 }
