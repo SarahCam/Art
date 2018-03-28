@@ -1,5 +1,6 @@
 package db;
 
+import enums.CategoryType;
 import enums.StatusType;
 import models.Article;
 import models.Editor;
@@ -44,11 +45,13 @@ public class Seeds {
         article4.setLede("Trouble in the city when local football team kick ball into passers-by");
         article4.setStory("Blah blah blah");
         article4.setImage("fives.jpg");
+        article4.setCategory(CategoryType.SPORT);
         article4.setPublishedDate((GregorianCalendar) currentTime);
         article4.setStatus(StatusType.PUBLISH);
         DBHelper.saveOrUpdate(article4);
         Article article5 = new Article("Glasgow Pub Brawl", journalist2);
         article5.setLede("Three dead and five critically injured when fight breaks out in the Dog and Hound");
+        article5.setCategory(CategoryType.NEWS);
         article5.setStory("Blah blah blah");
         article5.setImage("pub-brawl.jpg");
         article5.setPublishedDate((GregorianCalendar) currentTime);

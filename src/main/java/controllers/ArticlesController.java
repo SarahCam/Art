@@ -173,5 +173,21 @@ public class ArticlesController {
             return null;
 
         }, new VelocityTemplateEngine());
+
+        ///// FRONTENT --
+        get("/articles/view/:id", (req, res) -> {
+            String strId = req.params(":id");
+            Integer intId = Integer.parseInt(strId);
+            Article article = DBHelper.find(intId, Article.class);
+
+            Map<String, Object> model = new HashMap<>();
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            model.put("user", loggedInUser);
+
+            model.put("template", "templates/articles/fullView.vtl");
+            model.put("article", article);
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, new VelocityTemplateEngine());
     }
 }

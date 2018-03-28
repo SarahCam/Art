@@ -53,6 +53,16 @@ main .loginblock {
     flex-direction: row;
 }
 
+header {
+    background: #e4e4e4;
+    color: white;
+    font-size: 15px;
+    height: 60px;
+    min-width: 200px;
+    z-index: 2000;
+    position: relative;
+}
+
 .logo {
     display: inline-block;
     margin-right: 20px;
@@ -60,7 +70,9 @@ main .loginblock {
 
 .logo-header {
     display: inline-block;
+    margin: 10px 0 0 20px;
 }
+
 
 .input-group {
     width: 35%;
@@ -263,22 +275,22 @@ input.take-review {
 .btn:first-child{*margin-left:0;}
 
 .draft {
-    border-top: 13px solid red;
+    border-top: 8px solid red;
 }
 
 .NONE {
-    border-top: 13px solid orange;
+    border-top: 8px solid orange;
 }
 
 .NEWS {
-    border-top: 13px solid red;
+    border-top: 8px solid red;
 }
 
 .SPORT {
-    border-top: 13px solid green;
+    border-top: 8px solid #86AE51;
 }
 .ENTERTAINMENT {
-    border-top: 13px solid #0094fe;
+    border-top: 8px solid #0094fe;
 }
 
 
@@ -298,7 +310,7 @@ input.take-review {
             }
         }
 
-        .block{
+        /* .block{
           height: 100px;
           width: 100%;
           position: relative;
@@ -314,4 +326,4 @@ input.take-review {
           bottom: 0;
           transform-origin: right bottom;
           transform: skewY(-3deg);
-        }
+        } */
