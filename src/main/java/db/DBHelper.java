@@ -177,4 +177,17 @@ public class DBHelper {
         }
     }
 
+    public static Employee createEmployee(String firstName, String lastName, String role){
+        if(role == "Journalist"){
+            return new Journalist(firstName, lastName);
+        }
+        else if(role == "Editor"){
+            return new Editor(firstName, lastName);
+        }
+        else if(role == "HR Manager"){
+            return new HRManager(firstName, lastName);
+        }
+        return null;
+    }
+
 }
