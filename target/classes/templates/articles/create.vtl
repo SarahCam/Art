@@ -1,25 +1,38 @@
-<p class="pageHeader">Create Article</p>
+<h1 class="pageHeader">Create Article | <span><a href="/articles/dashboard" class="btn">Cancel</a>
+</span></h1>
 
 <form action="/articles/create" method="post">
-    <label for="headline">Headline:</label>
-    <input class="inputbox" type="text" name="headline" required="true" value="Enter headline...">
+    <div class="group">
+    <input type="text" name="headline" required="true" /><span class="highlight"></span><span class="bar"></span>
+    <label>Headline:</label>
+    </div>
 
-    <label for="image">Image:</label>
-    <input class="inputbox" type="text" name="image" required="true" value="Add image URL...">
+    <div class="group">
+    <input class="inputbox" type="text" name="image" required="true" /><span class="highlight"></span><span class="bar"></span>
+        <label>Image</label>
+    </div>
 
-    <label for="lede">Lede:</label>
-    <input class="inputbox" type="text" name="lede" required="true" value="Enter lede...">
 
-    <label for="category">Category:</label>
+        <div class="group">
+    <input type="text" name="lede" required="true" /><span class="highlight"></span><span class="bar"></span>
+            <label>Lede</label>
+        </div>
+
+
+            <div class="group">
+
+            <label for="category">Category:</label>
     <select id="category" name="category">
         #foreach($articleCategory in $articleCategories)
         <option value="$articleCategory" selected="selected">$articleCategory.getCategoryName()</option>
         #end
     </select>
+            </div>
 
-    <label for="story">Story:</label>
-    <input type="text" name="story" required="true" class="inputbox" value="Enter story...">
+    <div class="group">
+    <input type="text" name="story" required="true" /><span class="highlight"></span><span class="bar"></span>
+        <label>Story</label>
+    </div>
 
-    <input type="submit" value="Save" class="button">
+    <button type="submit" value="Save" class="btn">Save</button>
 </form>
-<a href="/articles/dashboard" class="button center">Cancel</a>

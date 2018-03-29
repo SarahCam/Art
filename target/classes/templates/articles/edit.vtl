@@ -1,34 +1,33 @@
-<p class="pageHeader">Edit Article</p>
+<h1 class="pageHeader">Edit Article | <span><a class="btn" href="/articles/$article.getId()">Cancel</a></span></h1>
 
 <form action="/articles/$article.getId()" method="post">
-    <label for="headline">Headline:</label>
-    <input class="inputbox" type="text" name="headline" required="true" value="$article.getHeadLine()"/>
+    <div class="group">
+        <input type="text" name="headline" required="true" value="$article.getHeadLine()"/><span class="highlight"></span><span class="bar"></span>
+        <label>Headline</label>
+    </div>
 
-    <label for="image">Image:</label>
-    <input class="inputbox" type="text" name="image" required="true" value="$article.getImage()"/>
+    <div class="group">
+        <input type="text" name="image" required="true" value="$article.getImage()"/><span class="highlight"></span><span class="bar"></span>
+        <label>Image</label>
+    </div>
 
     <div class="group">
         <textarea type="text" name="lede" id="lede" value="$article.getLede()" required="required"></textarea><span class="highlight"></span><span class="bar"></span>
         <label>Lede</label>
     </div>
 
-
-    <label for="category">Category:</label>
-    <select id="category" name="category">
-        #foreach($articleCategory in $articleCategories)
-        <option value="$articleCategory" selected="selected">$articleCategory.getCategoryName()</option>
-        #end
-    </select>
+    <div class="group">
+        <select id="category" name="category">
+            #foreach($articleCategory in $articleCategories)
+            <option value="$articleCategory" selected="selected">$articleCategory.getCategoryName()</option>
+            #end
+        </select><span class="highlight"></span><span class="bar"></span>
+        <label for="category">Category:</label>
+    </div>
 
     <div class="group">
         <textarea type="text" name="story" id="story" required="required" value="$article.getStory()"></textarea><span class="highlight"></span><span class="bar"></span>
         <label>Story</label>
     </div>
-
-    <button type="submit" value="Save" class="btn">
+    <button type="submit" value="Save" class="btn"><i class="far fa-save"></i>&nbsp;</button>
 </form>
-<a class="btn" href="/articles/$article.getId()">Cancel</a>
-
-
-
-

@@ -1,7 +1,7 @@
 <section class="wrapper">
     <article class="container">
-        <div class="shift">
-            <h1>$article.getHeadLine() | <span class="headline-category">$article.getCategory().getCategoryName()</span></h1>
+        <div>
+            <h1>$article.getHeadLine() | <span class="headline-category">$article.getCategory().getCategoryName()</span> | <a href="/articles/dashboard" class="btn">Return to articles</a></h1>
             <p>Jounalist: <span>$article.getJournalist().getFirstName()</span> <span>$article.getJournalist().getLastName()</span></p>
             <p>Published: $article.getPublishedDate().getTime()</p>
             <div><img class="full-image" src="/imgs/${article.getImage()}"/></div>
