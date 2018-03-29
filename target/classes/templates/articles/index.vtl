@@ -1,7 +1,9 @@
     <div>
+        <h1 class="pageheader">Articles
         #if($loggedInEmployeeType == "Journalist")
-        <h1 class="pageheader">Articles | <a data-balloon="Create new article" data-balloon-pos="down" class="btn sport-btn" href="/articles/create"><i class="far fa-file-alt"></i> Create new article</a></h1>
+         | <a data-balloon="Create new article" data-balloon-pos="down" class="btn sport-btn" href="/articles/create"><i class="far fa-file-alt"></i> Create new article</a>
         #end
+        </h1>
     </div>
     <section class="cards">
     #foreach($article in $articles)

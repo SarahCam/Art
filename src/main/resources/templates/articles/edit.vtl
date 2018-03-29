@@ -22,12 +22,20 @@
     </div>
 
     <div class="group">
-        <textarea type="text" name="lede" id="lede" value="$article.getLede()" required="required">$article.getLede()</textarea><span class="highlight"></span><span class="bar"></span>
+        <textarea rows="5" cols="50" type="text" name="lede" id="lede" value="$article.getLede()" required="required">
+            #if($article.getLede())
+            $article.getLede()
+            #end
+        </textarea><span class="highlight"></span><span class="bar"></span>
         <label>Lede</label>
     </div>
 
     <div class="group">
-        <textarea type="text" name="story" id="story" required="required" value="$article.getStory()"></textarea><span class="highlight"></span><span class="bar"></span>
+        <textarea rows="10" cols="50" type="text" name="story" id="story" required="required">
+            #if($article.getStory())
+            $article.getStory()
+            #end
+        </textarea><span class="highlight"></span><span class="bar"></span>
         <label>Story</label>
     </div>
     <button data-balloon="Save" data-balloon-pos="down" type="submit" class="btn"><i class="far fa-save"></i>Save</button>
