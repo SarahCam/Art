@@ -5,12 +5,12 @@
 <div>
     <section class="cards">
     #foreach($employee in $employees)
-        <article class="card">
+        <article class="card-employee">
             <div class="wrapper-employee" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
                 <div class="data $article.getStatus()">
                     <div class="card-content">
-                        <p>$employee.getFirstName()</p>
-        <p>$employee.getLastName()</p>
+                        <h3><span>$employee.getFirstName() </span><span>$employee.getLastName()</span></h3>
+
         <p>$employee.getHireDate().getTime()</p>
         <p>$employee.getQuitDate().getTime()</p>
         <p>$employee.isEmployed()</p>
