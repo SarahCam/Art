@@ -114,8 +114,14 @@ public class ArticlesController {
             Article article = DBHelper.find(intId, Article.class);
 
             Map<String, Object> model = new HashMap<>();
+
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
+            String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+
             model.put("user", loggedInUser);
+            model.put("loggedInEmployee", loggedInEmployee);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
 
             model.put("template", "templates/articles/view.vtl");
             model.put("article", article);
