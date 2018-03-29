@@ -1,32 +1,44 @@
-<p class="pageHeader">Edit Employees</p>
+<h1 class="pageHeader">Edit Employees | <span><a href="/employees/create/journalist" class="btn">Add New Journalist</a>
+</span><span><a href="/employees/dashboard" class="btn">Cancel</a></span></h1>
+
 
 <div>
-    <a href="/employees/create/journalist">Add New Journalist</a>
-</div>
-
-<div>
+    <section class="cards">
     #foreach($employee in $employees)
-    <div class="">
-        <p>$employee.getFirstName()</p>
+        <article class="card">
+            <div class="wrapper-employee" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
+                <div class="data $article.getStatus()">
+                    <div class="card-content">
+                        <p>$employee.getFirstName()</p>
         <p>$employee.getLastName()</p>
         <p>$employee.getHireDate().getTime()</p>
         <p>$employee.getQuitDate().getTime()</p>
         <p>$employee.isEmployed()</p>
 
+
         <form action="/employees/dashboard" method="post">
-            <label for="firstname">First Name:</label>
-            <input class="inputbox" type="text" name="firstname" required="true" value="$employee.getFirstName()">
+            <div class="group">
+            <input type="text" name="firstname" required="true" value="$employee.getFirstName()"><span class="highlight"></span><span class="bar"></span>
+            <label>First Name</label>
+            </div>
 
-            <label for="lastname">Last Name:</label>
-            <input class="inputbox" type="text" name="lastname" required="true" value="$employee.getLastName()">
+            <div class="group">
+            <input type="text" name="lastname" required="true" value="$employee.getLastName()"><span class="highlight"></span><span class="bar"></span>
+            <label>Last Name</label>
+            </div>
 
-            <label for="isemployed">Is Employed?</label>
-            <input class="inputbox" type="text" name="isemployed" required="true" value="$employee.isEmployed()">
+                <div class="group">
+            <input type="text" name="isemployed" required="true" value="$employee.isEmployed()"><span class="highlight"></span><span class="bar"></span>
+            <label>Is Employed?</label>
+                </div>
 
-            <input type="submit" value="Save" class="button">
+
+            <input type="submit" value="Save" class="btn"/>
         </form>
-        <a href="/employees/dashboard" class="button center">Cancel</a>
+
 
     </div>
+                </div></div></article>
     #end
+    </section>
 </div>

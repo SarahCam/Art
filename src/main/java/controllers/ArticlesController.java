@@ -76,6 +76,7 @@ public class ArticlesController {
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
             model.put("user", loggedInUser);
             model.put("articleCategories", articleCategories);
+
             model.put("template", "templates/articles/create.vtl");
             return new ModelAndView(model, "templates/adminLayout.vtl");
         }, new VelocityTemplateEngine());
