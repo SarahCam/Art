@@ -25,6 +25,7 @@ public class ArticlesController {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+
             List<Article> articles = DBHelper.getAllOrderByProperty(Article.class, "publishedDate");
 
             model.put("template", "templates/main.vtl");
@@ -32,6 +33,23 @@ public class ArticlesController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
+
+
+        post("/", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            String category = req.queryParams("category");
+
+            // First argument must be null or a string value of the CategoryType ENUM:
+//            List<Article> articles = DBHelper.getAllArticlesFilterByCategoryOrderByProperty(null, "publishedDate");
+            List<Article> articles = DBHelper.getAllArticlesFilterByCategoryOrderByProperty(category, "publishedDate");
+
+            model.put("template", "templates/main.vtl");
+            model.put("articles", articles);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, new VelocityTemplateEngine());
+
 
         get("/articles/dashboard", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

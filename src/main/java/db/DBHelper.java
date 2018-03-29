@@ -97,6 +97,7 @@ public class DBHelper {
         return results;
     }
 
+
     public static <T> T find(int id, Class classType){
         session = HibernateUtil.getSessionFactory().openSession();
         T result = null;
@@ -184,6 +185,23 @@ public class DBHelper {
         }
         return articles;
     }
+
+
+    public static List<Article> getAllArticlesFilterByCategoryOrderByProperty(String category, String property){
+        List<Article> articles = DBHelper.getAllOrderByProperty(Article.class, property);
+        List<Article> filteredArticles = new ArrayList<>();
+        if(category != null) {
+            CategoryType enumCategory = CategoryType.valueOf(category);
+            for (Article article : articles) {
+                if (article.getCategory() == enumCategory) {
+                    filteredArticles.add(article);
+                }
+            }
+            return filteredArticles;
+        }
+        return articles;
+    }
+
 
     public static ArrayList<CategoryType> getAllArticleCategories(){
         ArrayList<CategoryType> articleCategories = new ArrayList<>();
