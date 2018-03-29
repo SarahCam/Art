@@ -171,6 +171,7 @@ body.bg_main {
   background-attachment: fixed;
   background-size: cover;
   background-color: #E7EBEA;
+  margin-bottom: 100px;
 }
 
 body.bg_admin {
@@ -180,6 +181,7 @@ body.bg_admin {
   background-attachment: fixed;
   background-size: cover;
   background-color: #E7EBEA;
+  margin-bottom: 100px;
 }
 
 /* ---------- CARD ---------- */
