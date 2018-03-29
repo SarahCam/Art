@@ -3,13 +3,21 @@
         <div>
             <h1>$article.getHeadLine() | <span class="headline-category">$article.getCategory().getCategoryName()</span> | <a href="/articles/dashboard" class="btn">Return to articles</a></h1>
             <p>Jounalist: <span>$article.getJournalist().getFirstName()</span> <span>$article.getJournalist().getLastName()</span></p>
+            #if($article.getPublishedDate().getTime())
             <p>Published: $article.getPublishedDate().getTime()</p>
+            #end
             <div><img class="full-image" src="/imgs/${article.getImage()}"/></div>
+            #if($article.getLede())
             <p>$article.getLede()</p>
+            #end
+            #if($article.getStory())
             <p>$article.getStory()</p>
+            #end
             <p><strong>Status</strong> $article.getStatus()</p>
             <p><strong>Date created</strong> $article.getCreationDate().getTime()</p>
+            #if($article.getPublishedDate().getTime())
             <p><strong>Date published</strong> $article.getPublishedDate().getTime()</p>
+            #end
             <p><strong>Read count</strong> $article.getReadCount()</p>
         </div>
     </article>
