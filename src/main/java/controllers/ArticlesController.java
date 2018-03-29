@@ -173,12 +173,17 @@ public class ArticlesController {
 
             Map<String, Object> model = new HashMap<>();
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
+            String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+
             model.put("user", loggedInUser);
+            model.put("loggedInEmployee", loggedInEmployee);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
             model.put("articleCategories", articleCategories);
             model.put("template", "templates/articles/edit.vtl");
             model.put("article", article);
 
-            return new ModelAndView(model, "templates/layout.vtl");
+            return new ModelAndView(model, "templates/adminLayout.vtl");
         }, new VelocityTemplateEngine());
 
         post ("/articles/:id", (req, res) -> {
