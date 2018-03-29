@@ -1,4 +1,3 @@
-<div>
     <div>
         #if($loggedInEmployeeType == "Journalist")
         <h1 class="pageheader">Articles | <a data-balloon="Create new article" data-balloon-pos="down" class="btn sport-btn" href="/articles/create"><i class="far fa-file-alt"></i> Create new article</a></h1>
@@ -50,7 +49,7 @@
         <div class="data $article.getStatus()">
             <div class="card-content">
                 <h3>$article.getHeadLine()</h3>
-                <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
+                <p><span><strong>$article.getJournalist().getFirstName()</strong> </span><span><strong>$article.getJournalist().getLastName()</strong></span></p>
                 <p>$article.getCreationDate().getTime()</p>
                 <p>$article.getPublishedDate().getTime()</p>
                 <p>$article.getStatus()</p>
