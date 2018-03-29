@@ -7,8 +7,12 @@
             <p>Published: $article.getPublishedDate().getTime()</p>
             #end
             <div><img class="full-image" src="/imgs/${article.getImage()}"/></div>
+            #if($article.getLede())
             <p>$article.getLede()</p>
+            #end
+            #if($article.getStory())
             <p>$article.getStory()</p>
+            #end
             <p><strong>Status</strong> $article.getStatus()</p>
             <p><strong>Date created</strong> $article.getCreationDate().getTime()</p>
             #if($article.getPublishedDate().getTime())
