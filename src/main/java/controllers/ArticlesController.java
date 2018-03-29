@@ -81,9 +81,7 @@ public class ArticlesController {
             model.put("user", loggedInUser);
             model.put("loggedInEmployee", loggedInEmployee);
             model.put("loggedInEmployeeType", loggedInEmployeeType);
-
             model.put("articleCategories", articleCategories);
-
             model.put("template", "templates/articles/create.vtl");
             return new ModelAndView(model, "templates/adminLayout.vtl");
         }, new VelocityTemplateEngine());

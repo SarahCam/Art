@@ -10,12 +10,10 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 </head>
 <body class="bg_admin">
-<header class="block">
-    <div class="logo-header"><img src="/imgs/sgnn-header-text.png" width="176"/></div>
+<header class="block" style="display: flex; justify-content: space-between; color: #333">
+    <div class="logo-header"><img src="/imgs/sgnn-header-text.png" width="176"/></div><div style="margin-right: 20px;"><p><i class="fas fa-user-circle"> </i><span style="margin-left: 5px">$user </span><span>$loggedInEmployee.getLastName()</span> | <span>$loggedInEmployeeType</span>| <a data-balloon="Logout" data-balloon-pos="down" class="btn" href="/logout"><i class="fas fa-sign-out-alt"></i></a></p>
+</div>
 </header>
-<p><i class="fas fa-user-circle"> </i><span style="margin-left: 5px">$user </span><span>$loggedInEmployee.getLastName()</span> | <span>$loggedInEmployeeType</span>
-| <a data-balloon="Logout" data-balloon-pos="down" class="btn" href="/logout"><i class="fas fa-sign-out-alt"></i></a></p>
-
 <div class="main-wrapper">
     #parse( $template )
 </div>
