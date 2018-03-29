@@ -387,21 +387,7 @@ h1.pageheader {
     margin-top: 50px;
 }
 
-        @media only screen
-        and (min-device-width : 375px)
-        and (max-device-width : 667px) {
-            .card {
-                flex: 0 1 100%;
-            }
 
-            main {
-                width: 100%;
-            }
-
-            main .loginblock{
-                flex-direction: column;
-            }
-        }
 
         /* .block{
           height: 100px;
@@ -478,3 +464,29 @@ label.alt {
   font-size: 12px;
   color: #0094fe;
 }
+
+.employee-name {
+margin-right: 20px;
+}
+
+@media only screen
+        and (min-device-width : 375px)
+        and (max-device-width : 667px) {
+            .card, .card-employee {
+                flex: 0 1 100%;
+            }
+
+            main {
+                width: 100%;
+            }
+
+            main .loginblock{
+                flex-direction: column;
+            }
+            .no-display {
+                display: none;
+            }
+            .employee-name {
+            margin-right: 5px;
+            }
+        }

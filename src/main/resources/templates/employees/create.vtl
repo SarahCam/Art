@@ -1,18 +1,17 @@
-<h1 class="pageHeader">New Journalist | <span><a href="/employees/dashboard" class="btn">Cancel</a>
+<h1 class="pageheader">New Journalist | <span><a href="/employees/dashboard" class="btn">Cancel</a>
 </span></h1>
 
-<div class="group">
-    <input type="text" name="firstname" required="true" value="$employee.getFirstName()"><span class="highlight"></span><span class="bar"></span>
-    <label>First Name</label>
-</div>
-
 <form action="/employees/create/journalist" method="post">
-    <input class="inputbox" type="text" name="firstname" required="true" value="">
-    <label for="firstname">First Name:</label>
+    <div class="group">
+    <input class="inputbox" type="text" name="firstname" required="true" /><span class="highlight"></span><span class="bar"></span>
+    <label>First Name</label>
+    </div>
+
+    <div class="group">
+    <input class="inputbox" type="text" name="lastname" required="true" /><span class="highlight"></span><span class="bar"></span>
+    <label>Last Name</label>
+    </div>
 
 
-    <label for="lastname">Last Name:</label>
-    <input class="inputbox" type="text" name="lastname" required="true" value="">
-
-    <input type="submit" value="Save" class="button">
+    <button type="submit" value="Save" class="btn" />Save</button>
 </form>

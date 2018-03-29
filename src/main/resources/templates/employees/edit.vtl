@@ -1,44 +1,49 @@
-<h1 class="pageHeader">Edit Employees | <span><a href="/employees/create/journalist" class="btn">Add New Journalist</a>
-</span><span><a href="/employees/dashboard" class="btn">Cancel</a></span></h1>
+<h1 class="pageheader">Edit Employees | <span><a href="/employees/create/journalist" class="btn">Add New Journalist</a>
+</span></h1>
 
 
 <div>
     <section class="cards">
-    #foreach($employee in $employees)
+        #foreach($employee in $employees)
         <article class="card-employee">
             <div class="wrapper-employee" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
                 <div class="data $article.getStatus()">
                     <div class="card-content">
                         <h3><span>$employee.getFirstName() </span><span>$employee.getLastName()</span></h3>
 
-        <p>$employee.getHireDate().getTime()</p>
-        <p>$employee.getQuitDate().getTime()</p>
+                        <p>$employee.getHireDate().getTime()</p>
+
+                        <p
+                                #if($employee.getQuitDate().getTime() == 'nil' )
+                                style="display: none"
+                                #end
+                        >$employee.getQuitDate().getTime()</p>
                         <p><strong>Employed</strong> $employee.isEmployed()</p>
 
 
-        <form action="/employees/dashboard" method="post">
-            <div class="group">
-            <input type="text" name="firstname" required="true" value="$employee.getFirstName()"><span class="highlight"></span><span class="bar"></span>
-            <label>First Name</label>
-            </div>
+                        <form action="/employees/dashboard" method="post">
+                            <div class="group">
+                                <input type="text" name="firstname" required="true" value="$employee.getFirstName()"><span class="highlight"></span><span class="bar"></span>
+                                <label>First Name</label>
+                            </div>
 
-            <div class="group">
-            <input type="text" name="lastname" required="true" value="$employee.getLastName()"><span class="highlight"></span><span class="bar"></span>
-            <label>Last Name</label>
-            </div>
+                            <div class="group">
+                                <input type="text" name="lastname" required="true" value="$employee.getLastName()"><span class="highlight"></span><span class="bar"></span>
+                                <label>Last Name</label>
+                            </div>
 
-                <div class="group">
-            <input type="text" name="isemployed" required="true" value="$employee.isEmployed()"><span class="highlight"></span><span class="bar"></span>
-            <label>Is Employed?</label>
-                </div>
-
-
-            <input type="submit" value="Save" class="btn"/>
-        </form>
+                            <div class="group">
+                                <input type="text" name="isemployed" required="true" value="$employee.isEmployed()"><span class="highlight"></span><span class="bar"></span>
+                                <label>Is Employed?</label>
+                            </div>
 
 
-    </div>
+                            <input type="submit" value="Save" class="btn"/>
+                        </form>
+
+
+                    </div>
                 </div></div></article>
-    #end
+        #end
     </section>
 </div>

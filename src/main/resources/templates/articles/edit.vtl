@@ -1,4 +1,4 @@
-<h1 class="pageHeader">Edit Article | <span><a class="btn" href="/articles/dashboard">Cancel</a></span></h1>
+<h1 class="pageheader">Edit Article | <span><a class="btn" href="/articles/dashboard">Cancel</a></span></h1>
 
 <form action="/articles/$article.getId()" method="post">
     <div class="group">
@@ -11,18 +11,19 @@
         <label>Image</label>
     </div>
 
-    <div class="group">
-        <textarea type="text" name="lede" id="lede" value="$article.getLede()" required="required"></textarea><span class="highlight"></span><span class="bar"></span>
-        <label>Lede</label>
-    </div>
 
     <div class="group">
+        <label class="alt">Category</label>
         <select id="category" name="category">
             #foreach($articleCategory in $articleCategories)
             <option value="$articleCategory" selected="selected">$articleCategory.getCategoryName()</option>
             #end
         </select><span class="highlight"></span><span class="bar"></span>
-        <label for="category">Category:</label>
+    </div>
+
+    <div class="group">
+        <textarea type="text" name="lede" id="lede" value="$article.getLede()" required="required"></textarea><span class="highlight"></span><span class="bar"></span>
+        <label>Lede</label>
     </div>
 
     <div class="group">
