@@ -1,17 +1,17 @@
-<div>
-    <p>$user</p>
-    <div>
-        <p>$article.getStatus()</p>
-        <p>$article.getCategory().getCategoryName()</p>
-        <p>$article.getHeadLine()</p>
-        <p>$article.getJournalist().getFirstName()</p>
-        <p>$article.getJournalist().getLastName()</p>
-        <p>$article.getImage()</p>
-        <p>$article.getLede()</p>
-        <p>$article.getStory()</p>
-        <p>$article.getCreationDate().getTime()</p>
-        <p>$article.getPublishedDate().getTime()</p>
-        <p>$article.getReadCount()</p>
-    </div>
-</div>
+<section class="wrapper">
+    <article class="container">
+        <div class="shift">
+            <h1>$article.getHeadLine() | <span class="headline-category">$article.getCategory().getCategoryName()</span></h1>
+            <p>Jounalist: <span>$article.getJournalist().getFirstName()</span> <span>$article.getJournalist().getLastName()</span></p>
+            <p>Published: $article.getPublishedDate().getTime()</p>
+            <div><img class="full-image" src="/imgs/${article.getImage()}"/></div>
+            <p>$article.getLede()</p>
+            <p>$article.getStory()</p>
+            <p><strong>Status</strong> $article.getStatus()</p>
+            <p><strong>Date created</strong> $article.getCreationDate().getTime()</p>
+            <p><strong>Date published</strong> $article.getPublishedDate().getTime()</p>
+            <p><strong>Read count</strong> $article.getReadCount()</p>
+        </div>
+    </article>
+</section>
 

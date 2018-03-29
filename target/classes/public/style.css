@@ -93,6 +93,7 @@ span.headline-category {
 
 section.wrapper {
     width: 100%;
+    margin-bottom: 100px;
 }
 article.container {
     width: 960px;
@@ -108,7 +109,7 @@ article.p {
 }
 .full-image {width: 100%;}
 
-.shift { display; inline-block; }
+a {text-decoration: none;}
 /* ---------- BUTTONS ---------- */
 button.go {
     width: 50px;
@@ -157,6 +158,15 @@ body.bg_homepage {
 }
 
 body.bg_main {
+  background-image: url('../imgs/bg3.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #E7EBEA;
+}
+
+body.bg_admin {
   background-image: url('../imgs/bg3.jpg');
   background-position: center center;
   background-repeat: no-repeat;

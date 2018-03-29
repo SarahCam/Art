@@ -1,11 +1,7 @@
 <div>
-    <p>$user</p>
-    <p>$loggedInEmployee.getLastName()</p>
-    <p>$loggedInEmployeeType</p>
-
     <div>
         #if($loggedInEmployeeType == "Journalist")
-        <a data-balloon="Create new article" data-balloon-pos="down" class="btn" href="/articles/create"><i class="far fa-file-alt"></i>Create new article</a>
+        <h1 class="pageheader">Articles | <a data-balloon="Create new article" data-balloon-pos="down" class="btn sport-btn" href="/articles/create"><i class="far fa-file-alt"></i> Create new article</a></h1>
         #end
     </div>
     <section class="cards">
@@ -51,7 +47,7 @@
                 #end
             </ul>
         </div>
-        <div class="data $article.getStatus()" > <!-- ADD STATUS $article.getStatus()-->
+        <div class="data $article.getStatus()">
             <div class="card-content">
                 <h3>$article.getHeadLine()</h3>
                 <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
