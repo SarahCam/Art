@@ -327,6 +327,18 @@ body.bg_admin {
 input.take-review {
   background-color: blue;
 }
+
+
+.top, .btn-box { display: flex; }
+.btn-box { margin: 56px 0 0 10px; }
+
+.all-btn {
+    color: white !important;
+    background-color: #F8BB52 !important;
+    background-image: none !important;
+    border: none !important;
+    margin-right: 10px;
+}
 .news-btn {
     color: white !important;
     background-color: red !important;
