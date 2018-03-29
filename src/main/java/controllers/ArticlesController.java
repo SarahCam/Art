@@ -73,8 +73,15 @@ public class ArticlesController {
         get("/articles/create", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<CategoryType> articleCategories = DBHelper.getAllArticleCategories();
+
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
+            String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+
             model.put("user", loggedInUser);
+            model.put("loggedInEmployee", loggedInEmployee);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
+
             model.put("articleCategories", articleCategories);
 
             model.put("template", "templates/articles/create.vtl");
@@ -108,8 +115,14 @@ public class ArticlesController {
             Article article = DBHelper.find(intId, Article.class);
 
             Map<String, Object> model = new HashMap<>();
+
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
+            String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+
             model.put("user", loggedInUser);
+            model.put("loggedInEmployee", loggedInEmployee);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
 
             model.put("template", "templates/articles/view.vtl");
             model.put("article", article);

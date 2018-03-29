@@ -33,6 +33,10 @@ public class EmployeesController {
 
             List<Employee> employees = DBHelper.getAll(Employee.class);
 
+            model.put("user", loggedInUser);
+            model.put("loggedInEmployee", loggedInEmployee);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
+
             model.put("template", "templates/employees/edit.vtl");
             model.put("employees", employees);
 
@@ -62,6 +66,14 @@ public class EmployeesController {
 
         get ("/employees/create/journalist", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+
+            String loggedInUser = LoginController.getLoggedInUserName(req, res);
+            Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
+            String loggedInEmployeeType = DBHelper.findEmployeeType(loggedInUser);
+
+            model.put("user", loggedInUser);
+            model.put("loggedInEmployee", loggedInEmployee);
+            model.put("loggedInEmployeeType", loggedInEmployeeType);
 
             model.put("template", "templates/employees/create.vtl");
 
