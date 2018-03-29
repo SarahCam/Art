@@ -12,12 +12,9 @@
                         <h3><span>$employee.getFirstName() </span><span>$employee.getLastName()</span></h3>
 
                         <p>$employee.getHireDate().getTime()</p>
-
-                        <p
-                                #if($employee.getQuitDate().getTime() == 'nil' )
-                                style="display: none"
-                                #end
-                        >$employee.getQuitDate().getTime()</p>
+                        #if($employee.getQuitDate().getTime())
+                        <p>$employee.getQuitDate().getTime()</p>
+                        #end
                         <p><strong>Employed</strong> $employee.isEmployed()</p>
 
 

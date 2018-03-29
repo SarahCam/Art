@@ -53,9 +53,11 @@
                 <h3>$article.getHeadLine()</h3>
                 <p><span><strong>$article.getJournalist().getFirstName()</strong> </span><span><strong>$article.getJournalist().getLastName()</strong></span></p>
                 <p>$article.getCreationDate().getTime()</p>
+                #if($article.getPublishedDate().getTime())
                 <p>$article.getPublishedDate().getTime()</p>
+                #end
                 <p>$article.getStatus()</p>
-                <p>$article.getCategory().getCategoryName()</p>
+                <p style="text-transform: uppercase;"><strong>$article.getCategory().getCategoryName()</strong></p>
             </div>
         </div>
     </article>
