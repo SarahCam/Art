@@ -1,15 +1,17 @@
 @import url('/reset.min.css');
 @import url('/balloon.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,700i,900|Open+Sans:400,700,700i,800');
+@import url('https://fonts.googleapis.com/css?family=Averia+Sans+Libre');
+
 
 body {
     background-color: white;
-    font-family: "Open Sans", sans-serif;
-    color: #444;
+    font-family: "Averia Sans Libre", cursive;
+    color: #e0dbd1;
     margin-bottom: 100px;
     }
 
-h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Averia Sans Libre', cursive;}
 
 input:focus,
 select:focus,
@@ -36,13 +38,13 @@ body, html {
     padding: 10px;
     margin: 0 0 20px;
     font-size: 16px;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Averia Sans Libre', cursive;
     font-weight: 800;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #444;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Averia Sans Libre', cursive;
     font-weight: 800;}
 
 main {
@@ -72,7 +74,7 @@ main .loginblock {
 }
 
 header {
-    background: #FEF9E7;
+    background: #000000;
     color: white;
     font-size: 15px;
     height: 60px;
@@ -92,7 +94,7 @@ header {
 }
 
 span.headline-category {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Averia Sans Libre', cursive;
     text-transform: uppercase;
     font-size: 70%;
     color: red;
@@ -122,7 +124,7 @@ button.go {
     width: 50px;
     padding: 10px;
     margin-top: 8px;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Averia Sans Libre', cursive;
     font-weight: 800;
     font-size: 95%;
     color: white;
@@ -156,16 +158,16 @@ textarea:focus {
 
 
 body.bg_homepage {
-  background-image: url('../imgs/bg_homepage.jpg');
+  background-image: url('../imgs/FireLilyBG.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #E7EBEA;
+  background-color: orange;
 }
 
 body.bg_main {
-  background-image: url('../imgs/CreamCanvasBG.jpg');
+  background-image: url('../imgs/BlackBoard.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -175,7 +177,7 @@ body.bg_main {
 }
 
 body.bg_admin {
-  background-image: url('../imgs/CreamCanvasBG.jpg');
+  background-image: url('../imgs/BlackBoard.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -186,7 +188,7 @@ body.bg_admin {
 
 /* ---------- CARD ---------- */
 .card {
-  background: white;
+  background: #e0dbd1;
   margin-bottom: 2em;
 }
 
@@ -198,12 +200,12 @@ body.bg_admin {
   padding: 1.4em;
   color: #444;
   z-index: 1;
-  background-color: #fff;
+  background-color: #e0dbd1; /* chalk white */
   position: relative;
 }
 
 .card-content h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Averia Sans Libre', cursive;
   margin-top: 0;
   margin-bottom: .5em;
   font-weight: 700;
@@ -250,6 +252,7 @@ body.bg_admin {
   margin: 30px 15px;
   flex: 0 1 30%;
   box-shadow: 0 9px 28px rgba(0, 0, 0, 0.3), 0 5px 2px rgba(0, 0, 0, 0.2);
+  border: 3px solid #e0dbd1;    /* chalk white Frame round each card */
 }
 .card-employee {
   background-color: #fff;
@@ -343,29 +346,29 @@ input.take-review {
 
 .all-btn {
     color: white !important;
-    background-color: #F8BB52 !important;
+    background-color: black !important;
     background-image: none !important;
     border: none !important;
     margin-right: 10px;
 }
 .news-btn {
-    color: white !important;
-    background-color: red !important;
+    color: black !important;
+    background-color: #c8ffb0 !important;   /* light green - Landscapes */
     background-image: none !important;
     border: none !important;
     margin-right: 10px;
 }
 .sport-btn {
-    color: white !important;
-    background-color: #86AE51 !important;
+    color: black !important;
+    background-color: #b7fffa !important;   /* light blue - Seascapes */
     background-image: none !important;
     border: none !important;
     margin-right: 10px;
 
 }
 .entertainment-btn {
-    color: white !important;
-    background-color: #0094fe !important;
+    color: black !important;
+    background-color: #fffeb6 !important;   /* light yellow - Still Life */
     background-image: none !important;
     border: none !important;
 }
@@ -389,18 +392,18 @@ input.take-review {
 }
 
 .NONE {
-    border-top: 8px solid orange;
+    border-top: 8px solid black;
 }
 
 .NEWS {
-    border-top: 8px solid red;
+    border-top: 8px solid #c8ffb0;  /* light green - Landscapes */
 }
 
 .SPORT {
-    border-top: 8px solid #86AE51;
+    border-top: 8px solid #b7fffa;  /* light blue - Seascapes */
 }
 .ENTERTAINMENT {
-    border-top: 8px solid #0094fe;
+    border-top: 8px solid #fffeb6;  /* light yellow - Still Life */
 }
 
 h1.pageheader {

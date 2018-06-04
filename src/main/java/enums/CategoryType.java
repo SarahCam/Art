@@ -2,9 +2,9 @@ package enums;
 
 public enum CategoryType {
     NONE("No Category"),
-    NEWS("News"),
-    SPORT("Sport"),
-    ENTERTAINMENT("Entertainment");
+    NEWS("Landscape"),
+    SPORT("Seascape"),
+    ENTERTAINMENT("Still Life");
 
     private String categoryName;
 

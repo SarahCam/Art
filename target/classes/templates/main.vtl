@@ -1,7 +1,7 @@
 <div class="top">
-<h1 class="pageheader">Paintings | </h1>
+<h1 class="pageheader">Paintings by Jane Campbell | </h1>
     <div class="btn-box">
-    <span><a data-balloon="All paintings" data-balloon-pos="down" class="btn all-btn" href="/">ALL</a></span><span><form action="/" method="post"><input name="category" type="hidden" required="required" value="NEWS"/><button data-balloon="News articles" data-balloon-pos="down" type="submit" class="btn news-btn">NEWS</button></form></span><span><form action="/" method="post"><input name="category" type="hidden" required="required" value="SPORT"/><button data-balloon="Sport articles" data-balloon-pos="down" type="submit" class="btn sport-btn">SPORT</button></form></span><span><form action="/" method="post"><input name="category" type="hidden" required="required" value="ENTERTAINMENT"/><button data-balloon="Entertainment articles" data-balloon-pos="down" type="submit" class="btn entertainment-btn">ENTERTAINMENT</button></form></span></div>
+    <span><a data-balloon="All paintings" data-balloon-pos="down" class="btn all-btn" href="/">ALL</a></span><span><form action="/" method="post"><input name="category" type="hidden" required="required" value="NEWS"/><button data-balloon="Landscape Paintings" data-balloon-pos="down" type="submit" class="btn news-btn">Landscapes</button></form></span><span><form action="/" method="post"><input name="category" type="hidden" required="required" value="SPORT"/><button data-balloon="Seascape Paintings" data-balloon-pos="down" type="submit" class="btn sport-btn">Seascapes</button></form></span><span><form action="/" method="post"><input name="category" type="hidden" required="required" value="ENTERTAINMENT"/><button data-balloon="Still Life Paintings" data-balloon-pos="down" type="submit" class="btn entertainment-btn">Still Lifes</button></form></span></div>
 </div>
         <section class="cards">
             #foreach($article in $articles)
@@ -14,7 +14,6 @@
                                 <h3>$article.getHeadLine()</h3>
                                 <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
                                 <p>$article.getLede()</p>
-                                <p>$article.getPublishedDate().getTime()</p>
                             </div>
                         </div>
                     </div>

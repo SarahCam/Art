@@ -1,7 +1,7 @@
     <div>
-        <h1 class="pageheader">Paintings
+        <h1 class="pageheader">Paintings by Jane Campbell
         #if($loggedInEmployeeType == "Journalist")
-         | <a data-balloon="Create new painting" data-balloon-pos="down" class="btn sport-btn" href="/articles/create"><i class="far fa-file-alt"></i> Create new article</a>
+         | <a data-balloon="Create new painting" data-balloon-pos="down" class="btn sport-btn" href="/articles/create"><i class="far fa-file-alt"></i> Create new painting</a>
         #end
         </h1>
     </div>
@@ -52,10 +52,6 @@
             <div class="card-content">
                 <h3>$article.getHeadLine()</h3>
                 <p><span><strong>$article.getJournalist().getFirstName()</strong> </span><span><strong>$article.getJournalist().getLastName()</strong></span></p>
-                <p>$article.getCreationDate().getTime()</p>
-                #if($article.getPublishedDate().getTime())
-                <p>$article.getPublishedDate().getTime()</p>
-                #end
                 <p>$article.getStatus()</p>
                 <p style="text-transform: uppercase;"><strong>$article.getCategory().getCategoryName()</strong></p>
             </div>
