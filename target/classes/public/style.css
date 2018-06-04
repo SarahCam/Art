@@ -72,7 +72,7 @@ main .loginblock {
 }
 
 header {
-    background: #e4e4e4;
+    background: #FEF9E7;
     color: white;
     font-size: 15px;
     height: 60px;
@@ -165,7 +165,7 @@ body.bg_homepage {
 }
 
 body.bg_main {
-  background-image: url('../imgs/bg3.jpg');
+  background-image: url('../imgs/CreamCanvasBG.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -175,7 +175,7 @@ body.bg_main {
 }
 
 body.bg_admin {
-  background-image: url('../imgs/bg3.jpg');
+  background-image: url('../imgs/CreamCanvasBG.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
