@@ -95,9 +95,9 @@ header {
 
 span.headline-category {
     font-family: 'Averia Sans Libre', cursive;
-    text-transform: uppercase;
-    font-size: 70%;
-    color: red;
+  /*  text-transform: uppercase; */
+    font-size: 90%;
+    color: #ff0490;  /* Electric Pink */
 }
 
 section.wrapper {
@@ -200,7 +200,7 @@ body.bg_admin {
   padding: 1.4em;
   color: #444;
   z-index: 1;
-  background-color: #e0dbd1; /* chalk white */
+  background-color: #e0dbd1c9;     /*  #e0dbd1 - chalk white, c9 - with some transparency */
   position: relative;
 }
 

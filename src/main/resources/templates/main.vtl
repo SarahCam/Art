@@ -11,9 +11,21 @@
                     <div class="wrapper" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
                         <div class="data ${article.getCategory()}" >
                             <div class="card-content">
-                                <h3>$article.getHeadLine()</h3>
-                                <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
-                                <p>$article.getLede()</p>
+                                <h3 style="text-align: center;">$article.getHeadLine()</h3>
+                                <p style="text-align: center;"><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
+                                <p style="text-align: center;">$article.getLede()</p>
+                                #if($article.getCategory().getCategoryName() == "Landscape")
+                                <p style="text-transform: uppercase; border: 3px outset #c8ffb0; background-color: #c8ffb0; text-align: center;"><strong>$article.getCategory().getCategoryName()</strong></p>
+                                #end
+                                #if($article.getCategory().getCategoryName() == "Seascape")
+                                <p style="text-transform: uppercase; border: 3px outset #b7fffa; background-color: #b7fffa; text-align: center;"><strong>$article.getCategory().getCategoryName()</strong></p>
+                                #end
+                                #if($article.getCategory().getCategoryName() == "Still Life")
+                                <p style="text-transform: uppercase; border: 3px outset #fffeb6; background-color: #fffeb6; text-align: center;"><strong>$article.getCategory().getCategoryName()</strong></p>
+                                #end
+                                #if($article.getCategory().getCategoryName() == "No Category")
+                                <p style="text-transform: uppercase; border: 3px outset #e0dbd1; background-color: #e0dbd1; text-align: center;"><strong>$article.getCategory().getCategoryName()</strong></p>
+                                #end
                             </div>
                         </div>
                     </div>
