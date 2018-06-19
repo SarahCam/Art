@@ -366,7 +366,7 @@ input.take-review {
     margin-right: 10px;
 
 }
-.entertainment-btn {
+.still-life-btn {
     color: black !important;
     background-color: #fffeb6 !important;   /* light yellow - Still Life */
     background-image: none !important;
@@ -402,7 +402,7 @@ input.take-review {
 .SEASCAPE {
     border-top: 8px solid #b7fffa;  /* light blue - Seascapes */
 }
-.ENTERTAINMENT {
+.STILL_LIFE {
     border-top: 8px solid #fffeb6;  /* light yellow - Still Life */
 }
 

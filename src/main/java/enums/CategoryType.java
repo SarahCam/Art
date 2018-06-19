@@ -4,7 +4,7 @@ public enum CategoryType {
     NONE("No Category"),
     LANDSCAPE("Landscape"),
     SEASCAPE("Seascape"),
-    ENTERTAINMENT("Still Life");
+    STILL_LIFE("Still Life");
 
     private String categoryName;
 
