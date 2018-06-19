@@ -51,7 +51,7 @@ public class Seeds {
                 "                <p>Pancetta aute nulla, deserunt shank consequat drumstick nostrud. Proident biltong exercitation cillum tri-tip pork belly hamburger pastrami flank in t-bone. Pancetta filet mignon aliqua, voluptate flank pariatur sed short loin alcatra. Magna do t-bone ad short loin kielbasa. Ham velit andouille nostrud labore culpa irure.</p>" +
                 "<p>Tongue chuck sausage, eu tenderloin nisi jerky. Strip steak velit labore sunt pork chop ham hock short ribs tempor. Pork loin shoulder sed nostrud magna meatball. Turkey pork belly tenderloin, consequat jerky chicken tempor meatball. Tenderloin pork chop proident dolor. Rump bresaola doner, bacon ad strip steak alcatra chuck qui adipisicing kielbasa tempor drumstick tail cow. Culpa frankfurter est meatloaf.</p>");
         reviewArticle1.setImage("KirktonOfLethendy.jpg");
-        reviewArticle1.setCategory(CategoryType.NEWS);
+        reviewArticle1.setCategory(CategoryType.LANDSCAPE);
         reviewArticle1.setPublishedDate((GregorianCalendar) currentTime);
         reviewArticle1.setStatus(StatusType.REVIEW);
         DBHelper.saveOrUpdate(reviewArticle1);
@@ -62,7 +62,7 @@ public class Seeds {
                 "                <p>Pancetta aute nulla, deserunt shank consequat drumstick nostrud. Proident biltong exercitation cillum tri-tip pork belly hamburger pastrami flank in t-bone. Pancetta filet mignon aliqua, voluptate flank pariatur sed short loin alcatra. Magna do t-bone ad short loin kielbasa. Ham velit andouille nostrud labore culpa irure.</p>" +
                 "<p>Tongue chuck sausage, eu tenderloin nisi jerky. Strip steak velit labore sunt pork chop ham hock short ribs tempor. Pork loin shoulder sed nostrud magna meatball. Turkey pork belly tenderloin, consequat jerky chicken tempor meatball. Tenderloin pork chop proident dolor. Rump bresaola doner, bacon ad strip steak alcatra chuck qui adipisicing kielbasa tempor drumstick tail cow. Culpa frankfurter est meatloaf.</p>");
         reviewArticle2.setImage("PasturesNew.jpg");
-        reviewArticle2.setCategory(CategoryType.SPORT);
+        reviewArticle2.setCategory(CategoryType.SEASCAPE);
         reviewArticle2.setPublishedDate((GregorianCalendar) currentTime);
         reviewArticle2.setStatus(StatusType.REVIEW);
         DBHelper.saveOrUpdate(reviewArticle2);
@@ -76,14 +76,14 @@ public class Seeds {
                 "                <p>Pancetta aute nulla, deserunt shank consequat drumstick nostrud. Proident biltong exercitation cillum tri-tip pork belly hamburger pastrami flank in t-bone. Pancetta filet mignon aliqua, voluptate flank pariatur sed short loin alcatra. Magna do t-bone ad short loin kielbasa. Ham velit andouille nostrud labore culpa irure.</p>" +
                         "<p>Tongue chuck sausage, eu tenderloin nisi jerky. Strip steak velit labore sunt pork chop ham hock short ribs tempor. Pork loin shoulder sed nostrud magna meatball. Turkey pork belly tenderloin, consequat jerky chicken tempor meatball. Tenderloin pork chop proident dolor. Rump bresaola doner, bacon ad strip steak alcatra chuck qui adipisicing kielbasa tempor drumstick tail cow. Culpa frankfurter est meatloaf.</p>");
         article4.setImage("PathToNowhere.jpg");
-        article4.setCategory(CategoryType.NEWS);
+        article4.setCategory(CategoryType.LANDSCAPE);
         article4.setPublishedDate((GregorianCalendar) currentTime);
         article4.setStatus(StatusType.PUBLISH);
         DBHelper.saveOrUpdate(article4);
 
         Article article5 = new Article("Poppy Field", journalist1);
         article5.setLede("Acrylic on Canvas");
-        article5.setCategory(CategoryType.NEWS);
+        article5.setCategory(CategoryType.LANDSCAPE);
         article5.setStory("<p>Bacon ipsum dolor amet strip steak flank jowl frankfurter sunt. Ham hock spare ribs non pork chop alcatra. Dolor shoulder doner, meatball strip steak enim veniam cillum anim aute eu exercitation ham hock deserunt. In nostrud ground round boudin fugiat rump irure leberkas mollit sunt aute tenderloin tail lorem cillum. Shankle chuck incididunt biltong voluptate, shoulder officia aliquip ullamco sed spare ribs ut. Venison lorem jerky, flank cupim et short ribs anim minim culpa hamburger kielbasa.</p>" +
                 "<p>Short ribs voluptate anim turkey, aliqua in laborum minim burgdoggen sint officia spare ribs jowl. Fugiat voluptate ham hock, t-bone id mollit pariatur. Minim et pig pork chop pariatur veniam commodo bacon, drumstick velit est tempor venison capicola hamburger. Biltong andouille swine voluptate ex, consequat in alcatra sint brisket jowl short ribs. Cow irure tongue corned beef jowl eu porchetta buffalo. Adipisicing qui swine pork belly pork lorem. Consectetur t-bone magna lorem tri-tip in.</p>" +
                 "<p>Aliqua consequat qui swine short loin, andouille incididunt officia shank. Meatball tail laboris doner excepteur, exercitation leberkas mollit veniam meatloaf ipsum adipisicing. Eu hamburger t-bone, incididunt fugiat buffalo landjaeger. Velit beef boudin, doner chicken commodo proident elit flank incididunt salami.</p>");

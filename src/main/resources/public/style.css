@@ -351,14 +351,14 @@ input.take-review {
     border: none !important;
     margin-right: 10px;
 }
-.news-btn {
+.landscape-btn {
     color: black !important;
     background-color: #c8ffb0 !important;   /* light green - Landscapes */
     background-image: none !important;
     border: none !important;
     margin-right: 10px;
 }
-.sport-btn {
+.seascape-btn {
     color: black !important;
     background-color: #b7fffa !important;   /* light blue - Seascapes */
     background-image: none !important;
@@ -395,11 +395,11 @@ input.take-review {
     border-top: 8px solid black;
 }
 
-.NEWS {
+.LANDSCAPE {
     border-top: 8px solid #c8ffb0;  /* light green - Landscapes */
 }
 
-.SPORT {
+.SEASCAPE {
     border-top: 8px solid #b7fffa;  /* light blue - Seascapes */
 }
 .ENTERTAINMENT {
