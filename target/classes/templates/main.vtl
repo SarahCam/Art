@@ -11,9 +11,9 @@
                     <div class="wrapper" style="background: url('../imgs/${article.getImage()}') center/cover no-repeat;">
                         <div class="data ${article.getCategory()}" >
                             <div class="card-content">
-                                <h3 style="text-align: center;">$article.getHeadLine()</h3>
+                                <h3 style="text-align: center;">$article.getTitle()</h3>
                                 <p style="text-align: center;"><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
-                                <p style="text-align: center;">$article.getLede()</p>
+                                <p style="text-align: center;">$article.getArtType()</p>
                                 #if($article.getCategory().getCategoryName() == "Landscape")
                                 <p style="text-transform: uppercase; border: 3px outset #c8ffb0; background-color: #c8ffb0; text-align: center;"><strong>$article.getCategory().getCategoryName()</strong></p>
                                 #end

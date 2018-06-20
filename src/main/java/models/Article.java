@@ -12,8 +12,8 @@ import java.util.GregorianCalendar;
 public class Article {
 
     private int id;
-    private String headLine;
-    private String lede;
+    private String title;
+    private String artType;
     private String story;
     private String image;
     private CategoryType category;
@@ -26,9 +26,9 @@ public class Article {
     public Article() {
     }
 
-    public Article(String headLine, Journalist journalist) {
-        this.headLine = headLine;
-        this.lede = null;
+    public Article(String title, Journalist journalist) {
+        this.title = title;
+        this.artType = null;
         this.story = null;
         this.image = null;
         this.category = CategoryType.NONE;
@@ -50,22 +50,22 @@ public class Article {
         this.id = id;
     }
 
-    @Column(name = "head_line")
-    public String getHeadLine() {
-        return headLine;
+    @Column(name = "title")
+    public String getTitle() {
+        return title;
     }
 
-    public void setHeadLine(String headLine) {
-        this.headLine = headLine;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    @Column(name = "lede")
-    public String getLede() {
-        return lede;
+    @Column(name = "artType")
+    public String getArtType() {
+        return artType;
     }
 
-    public void setLede(String lede) {
-        this.lede = lede;
+    public void setArtType(String artType) {
+        this.artType = artType;
     }
 
     @Column(name = "story", length = 2048)

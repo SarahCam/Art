@@ -2,8 +2,8 @@
 
 <form action="/articles/$article.getId()" method="post">
     <div class="group">
-        <input type="text" name="headline" required="true" value="$article.getHeadLine()"/><span class="highlight"></span><span class="bar"></span>
-        <label>Headline</label>
+        <input type="text" name="title" required="true" value="$article.getTitle()"/><span class="highlight"></span><span class="bar"></span>
+        <label>Title</label>
     </div>
 
     <div class="group">
@@ -22,8 +22,8 @@
     </div>
 
     <div class="group">
-        <textarea rows="5" cols="50" type="text" name="lede" id="lede" value="$article.getLede()" required="required">#if($article.getLede()) $article.getLede() #end </textarea><span class="highlight"></span><span class="bar"></span>
-        <label>Lede</label>
+        <textarea rows="5" cols="50" type="text" name="artType" id="artType" value="$article.getArtType()" required="required">#if($article.getArtType()) $article.getArtType() #end </textarea><span class="highlight"></span><span class="bar"></span>
+        <label>ArtType</label>
     </div>
 
     <div class="group">

@@ -1,7 +1,7 @@
 <section class="wrapper">
     <article class="container">
         <div class="shift">
-        <h1 class="pageheader">$article.getHeadLine() | <span class="headline-category">$article.getCategory().getCategoryName()</span></h1>
+        <h1 class="pageheader">$article.getTitle() | <span class="title-category">$article.getCategory().getCategoryName()</span></h1>
             <p><span>$article.getJournalist().getFirstName()</span> <span>$article.getJournalist().getLastName()</span></p>
             <p>Published: $article.getPublishedDate().getTime()</p>
 
@@ -9,7 +9,7 @@
 
             <div ><img class="full-image" src="/imgs/${article.getImage()}"/></div>
 
-        <h3>$article.getLede()</h3>
+        <h3>$article.getArtType()</h3>
         <p>$article.getStory()</p>
         </div>
         <div class="shift">
@@ -17,9 +17,9 @@
             #foreach($article in $articles)
             #if($article.getStatus() == "PUBLISH")
                 <li>
-                    <h3>$article.getHeadLine()</h3>
+                    <h3>$article.getTitle()</h3>
                     <p><span>$article.getJournalist().getFirstName() </span><span>$article.getJournalist().getLastName()</span></p>
-                    <p>$article.getLede()</p>
+                    <p>$article.getArtType()</p>
                 </li>
                 #end
                 #end

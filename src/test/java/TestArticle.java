@@ -20,8 +20,8 @@ public class TestArticle {
     }
 
     @Test
-    public void canGetHeadline() {
-        assertEquals("Dinosaur Rampage", article.getHeadLine());
+    public void canGetTitle() {
+        assertEquals("Dinosaur Rampage", article.getTitle());
     }
 
     @Test

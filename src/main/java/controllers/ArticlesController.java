@@ -87,8 +87,8 @@ public class ArticlesController {
         }, new VelocityTemplateEngine());
 
         post ("/articles/create", (req, res) -> {
-            String headline = req.queryParams("headline");
-            String lede = req.queryParams("lede");
+            String title = req.queryParams("title");
+            String artType = req.queryParams("artType");
             String story = req.queryParams("story");
             String image = req.queryParams("image");
             String strCategory = req.queryParams("category");
@@ -96,8 +96,8 @@ public class ArticlesController {
 
             String loggedInUser = LoginController.getLoggedInUserName(req, res);
             Employee loggedInEmployee = DBHelper.findEmployee(loggedInUser);
-            Article article = new Article(headline, (Journalist) loggedInEmployee);
-            article.setLede(lede);
+            Article article = new Article(title, (Journalist) loggedInEmployee);
+            article.setArtType(artType);
             article.setStory(story);
             article.setImage(image);
             article.setCategory(enumCategory);
@@ -191,15 +191,15 @@ public class ArticlesController {
             Integer intId = Integer.parseInt(strId);
             Article article = DBHelper.find(intId, Article.class);
 
-            String headline = req.queryParams("headline");
-            String lede = req.queryParams("lede");
+            String title = req.queryParams("title");
+            String artType = req.queryParams("artType");
             String story = req.queryParams("story");
             String image = req.queryParams("image");
             String strCategory = req.queryParams("category");
             CategoryType enumCategory = CategoryType.valueOf(strCategory);
 
-            article.setHeadLine(headline);
-            article.setLede(lede);
+            article.setTitle(title);
+            article.setArtType(artType);
             article.setStory(story);
             article.setImage(image);
             article.setCategory(enumCategory);
